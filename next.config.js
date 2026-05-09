@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  basePath: '/free-tools',
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  basePath: '/free-tools',
-  trailingSlash: true,
 };
 
 module.exports = nextConfig;

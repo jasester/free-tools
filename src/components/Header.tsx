@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import ThemeToggle from './ThemeToggle';
 
 /**
  * 顶部导航栏组件
@@ -22,7 +25,7 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* 导航链接 */}
+        {/* 导航链接 + 主题切换 */}
         <nav className="flex items-center gap-1">
           <Link
             href="/"
@@ -38,6 +41,8 @@ export default function Header() {
           >
             GitHub
           </a>
+          {/* 主题切换按钮 */}
+          <ThemeToggle />
         </nav>
       </div>
     </header>
