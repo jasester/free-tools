@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/free-tools',
+  basePath: '/',
   trailingSlash: true,
   images: {
     unoptimized: true,
