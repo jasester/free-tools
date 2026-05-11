@@ -21,6 +21,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2711442737753289"
           crossOrigin="anonymous"
         />
+        {/* 百度统计 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?626e516eead80c85ea73a94650a66e3e";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+            `,
+          }}
+        />
       </head>
       <body className="grid-bg min-h-screen">
         <ThemeProvider>
