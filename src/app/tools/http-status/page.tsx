@@ -102,7 +102,7 @@ const httpStatuses: HttpStatusInfo[] = [
  * 状态码类别配置
  */
 const categories = [
-  { id: 'all', name: 'All', label: '全部', color: 'bg-dark-500/50 text-dark-100' },
+  { id: 'all', name: 'All', label: '全部', color: 'bg-gray-200/50 dark:bg-dark-500/50 text-light-700 dark:text-dark-100' },
   { id: '1xx', name: '1xx Info', label: '信息', color: 'bg-blue-500/20 text-blue-400' },
   { id: '2xx', name: '2xx Success', label: '成功', color: 'bg-emerald-500/20 text-emerald-400' },
   { id: '3xx', name: '3xx Redirect', label: '重定向', color: 'bg-amber-500/20 text-amber-400' },
@@ -150,7 +150,7 @@ export default function HttpStatus() {
    */
   const getCategoryColor = (categoryId: string) => {
     const cat = categories.find((c) => c.id === categoryId);
-    return cat?.color || 'bg-dark-500/50 text-dark-100';
+    return cat?.color || 'bg-gray-200/50 dark:bg-dark-500/50 text-light-700 dark:text-dark-100';
   };
 
   return (
@@ -159,10 +159,10 @@ export default function HttpStatus() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题 */}
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 font-display text-3xl font-bold text-dark-50">
+          <h1 className="mb-2 font-display text-3xl font-bold text-light-900 dark:text-dark-50">
             HTTP Status Code Lookup
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Look up HTTP status codes and their meanings. Complete reference for all standard HTTP response codes.
           </p>
         </div>
@@ -193,7 +193,7 @@ export default function HttpStatus() {
                   </svg>
                 </button>
               </div>
-              <div className="mt-4 rounded-lg bg-dark-900/30 p-4">
+              <div className="mt-4 rounded-lg bg-gray-100/50 dark:bg-dark-900/30 p-4">
                 <p className="text-sm opacity-80">{selectedStatus.details}</p>
               </div>
             </div>
@@ -211,7 +211,7 @@ export default function HttpStatus() {
                   className={`rounded-lg px-4 py-2 text-sm font-medium transition ${
                     activeCategory === cat.id
                       ? 'btn-gradient text-white'
-                      : 'btn-ghost text-dark-100 hover:text-dark-50'
+                      : 'btn-ghost text-light-700 dark:text-dark-100 hover:text-light-900 dark:hover:text-dark-50'
                   }`}
                 >
                   {cat.name}
@@ -225,7 +225,7 @@ export default function HttpStatus() {
         <div className="mt-4 animate-fade-in-up">
           <div className="glass-card rounded-xl p-3">
             <div className="flex items-center gap-3 px-3">
-              <svg className="h-5 w-5 text-dark-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-5 w-5 text-light-500 dark:text-dark-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <input
@@ -233,10 +233,10 @@ export default function HttpStatus() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search status codes (e.g., 404, not found)..."
-                className="flex-1 bg-transparent py-2 text-dark-50 placeholder:text-dark-200 focus:outline-none"
+                className="flex-1 bg-transparent py-2 text-light-900 dark:text-dark-50 placeholder:text-light-400 dark:placeholder:text-dark-200 focus:outline-none"
               />
               {searchQuery && (
-                <button onClick={() => setSearchQuery('')} className="text-dark-200 hover:text-dark-50">
+                <button onClick={() => setSearchQuery('')} className="text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50">
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -250,10 +250,10 @@ export default function HttpStatus() {
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="font-display text-lg font-semibold text-dark-50">
+              <h3 className="font-display text-lg font-semibold text-light-900 dark:text-dark-50">
                 HTTP Status Codes
               </h3>
-              <span className="text-sm text-dark-200">
+              <span className="text-sm text-light-500 dark:text-dark-200">
                 {filteredStatuses.length} codes
               </span>
             </div>
@@ -277,7 +277,7 @@ export default function HttpStatus() {
             {filteredStatuses.length === 0 && (
               <div className="py-12 text-center">
                 <div className="mb-2 text-4xl">🔍</div>
-                <p className="text-dark-200">No status codes found matching your search</p>
+                <p className="text-light-500 dark:text-dark-200">No status codes found matching your search</p>
               </div>
             )}
           </div>
@@ -287,26 +287,26 @@ export default function HttpStatus() {
 
         {/* 状态码类别说明 */}
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-4 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-4 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             HTTP Status Code Classes
           </h2>
-          <div className="grid gap-4 text-sm text-dark-200 md:grid-cols-2">
+          <div className="grid gap-4 text-sm text-light-500 dark:text-dark-200 md:grid-cols-2">
             <div>
               <p className="mb-2">
                 <span className="inline-block w-12 rounded bg-blue-500/20 px-2 py-0.5 text-center text-blue-400">1xx</span>
-                <strong className="ml-2 text-dark-100">Informational:</strong>
+                <strong className="ml-2 text-light-700 dark:text-dark-100">Informational:</strong>
                 <br />
                 请求已被接收，继续处理
               </p>
               <p className="mb-2">
                 <span className="inline-block w-12 rounded bg-emerald-500/20 px-2 py-0.5 text-center text-emerald-400">2xx</span>
-                <strong className="ml-2 text-dark-100">Success:</strong>
+                <strong className="ml-2 text-light-700 dark:text-dark-100">Success:</strong>
                 <br />
                 请求已成功被服务器接收、理解并接受
               </p>
               <p className="mb-2">
                 <span className="inline-block w-12 rounded bg-amber-500/20 px-2 py-0.5 text-center text-amber-400">3xx</span>
-                <strong className="ml-2 text-dark-100">Redirection:</strong>
+                <strong className="ml-2 text-light-700 dark:text-dark-100">Redirection:</strong>
                 <br />
                 需要客户端采取进一步操作才能完成请求
               </p>
@@ -314,18 +314,18 @@ export default function HttpStatus() {
             <div>
               <p className="mb-2">
                 <span className="inline-block w-12 rounded bg-rose-500/20 px-2 py-0.5 text-center text-rose-400">4xx</span>
-                <strong className="ml-2 text-dark-100">Client Error:</strong>
+                <strong className="ml-2 text-light-700 dark:text-dark-100">Client Error:</strong>
                 <br />
                 请求包含语法错误或无法完成请求
               </p>
               <p className="mb-2">
                 <span className="inline-block w-12 rounded bg-purple-500/20 px-2 py-0.5 text-center text-purple-400">5xx</span>
-                <strong className="ml-2 text-dark-100">Server Error:</strong>
+                <strong className="ml-2 text-light-700 dark:text-dark-100">Server Error:</strong>
                 <br />
                 服务器在处理请求时发生错误
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">RFC Reference:</strong>
+                <strong className="text-light-700 dark:text-dark-100">RFC Reference:</strong>
                 <br />
                 HTTP/1.1: RFC 7231, HTTP/2: RFC 7540
               </p>

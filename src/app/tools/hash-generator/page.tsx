@@ -118,10 +118,10 @@ export default function HashGenerator() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题 */}
         <div className="animate-fade-in-up">
-          <h1 className="font-display mb-2 text-2xl font-bold text-dark-50">
+          <h1 className="font-display mb-2 text-2xl font-bold text-light-900 dark:text-dark-50">
             Hash Generator
           </h1>
-          <p className="mb-6 text-sm text-dark-200">
+          <p className="mb-6 text-sm text-light-500 dark:text-dark-200">
             Generate SHA-1, SHA-256, and SHA-512 hashes from text or files instantly.
           </p>
         </div>
@@ -130,7 +130,7 @@ export default function HashGenerator() {
 
         {/* 文本哈希区域 */}
         <div className="glass-card mt-6 animate-fade-in-up rounded-xl p-6">
-          <h2 className="font-display mb-3 font-semibold text-dark-50">
+          <h2 className="font-display mb-3 font-semibold text-light-900 dark:text-dark-50">
             Text Hash
           </h2>
           <textarea
@@ -149,7 +149,7 @@ export default function HashGenerator() {
             </button>
             <button
               onClick={clear}
-              className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-dark-100 transition"
+              className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-light-700 dark:text-dark-100 transition"
             >
               Clear
             </button>
@@ -158,18 +158,18 @@ export default function HashGenerator() {
 
         {/* 文件哈希区域 */}
         <div className="glass-card mt-4 animate-fade-in-up rounded-xl p-6">
-          <h2 className="font-display mb-3 font-semibold text-dark-50">
+          <h2 className="font-display mb-3 font-semibold text-light-900 dark:text-dark-50">
             File Hash
           </h2>
-          <label className="flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-dark-300 bg-dark-600/30 p-8 transition hover:border-blue-400/50">
-            <svg className="mb-2 h-8 w-8 text-dark-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <label className="flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 dark:border-dark-300 bg-gray-50 dark:bg-dark-600/30 p-8 transition hover:border-blue-400/50">
+            <svg className="mb-2 h-8 w-8 text-light-500 dark:text-dark-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
             </svg>
-            <span className="text-sm text-dark-200">
+            <span className="text-sm text-light-500 dark:text-dark-200">
               {fileName ? fileName : 'Click to select a file'}
             </span>
             {fileSize && (
-              <span className="mt-1 text-xs text-dark-300">{fileSize}</span>
+              <span className="mt-1 text-xs text-light-600 dark:text-dark-300">{fileSize}</span>
             )}
             <input
               type="file"
@@ -182,13 +182,13 @@ export default function HashGenerator() {
         {/* 哈希结果展示 */}
         {hashes.length > 0 && (
           <div className="mt-6 space-y-3 animate-fade-in-up">
-            <h2 className="font-display font-semibold text-dark-50">
+            <h2 className="font-display font-semibold text-light-900 dark:text-dark-50">
               Results
             </h2>
             {hashes.map((hash) => (
               <div key={hash.algorithm} className="glass-card rounded-xl p-4">
                 <div className="mb-1 flex items-center justify-between">
-                  <span className="text-sm font-medium text-dark-100">
+                  <span className="text-sm font-medium text-light-700 dark:text-dark-100">
                     {hash.algorithm}
                   </span>
                   <button
@@ -198,7 +198,7 @@ export default function HashGenerator() {
                     Copy
                   </button>
                 </div>
-                <div className="overflow-auto rounded-lg bg-dark-600/50 p-3 font-mono text-xs text-dark-100 break-all">
+                <div className="overflow-auto rounded-lg bg-gray-100 dark:bg-dark-600/50 p-3 font-mono text-xs text-light-700 dark:text-dark-100 break-all">
                   {hash.value}
                 </div>
               </div>
@@ -211,10 +211,10 @@ export default function HashGenerator() {
         {/* 说明区域 */}
         <section className="mt-10 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <h2 className="font-display mb-2 text-lg font-semibold text-dark-50">
+            <h2 className="font-display mb-2 text-lg font-semibold text-light-900 dark:text-dark-50">
               About Hash Generator
             </h2>
-            <p className="text-sm leading-relaxed text-dark-200">
+            <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">
               A hash function maps data of arbitrary size to fixed-size values. SHA-256
               and SHA-512 are part of the SHA-2 family and are widely used in cryptography,
               data integrity verification, and password hashing. All computation is performed

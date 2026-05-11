@@ -60,8 +60,8 @@ export default function TextDiff() {
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 text-3xl font-bold font-display text-dark-50">Text Diff Tool</h1>
-          <p className="mb-6 text-dark-200">Compare two texts and see the differences highlighted.</p>
+          <h1 className="mb-2 text-3xl font-bold font-display text-light-900 dark:text-dark-50">Text Diff Tool</h1>
+          <p className="mb-6 text-light-500 dark:text-dark-200">Compare two texts and see the differences highlighted.</p>
         </div>
 
         <AdCard slot="YOUR_AD_SLOT_DIFF_1" format="horizontal" />
@@ -70,25 +70,25 @@ export default function TextDiff() {
         <div className="mt-6 grid gap-4 lg:grid-cols-2 animate-fade-in-up">
           <div className="glass-card rounded-xl p-4">
             <div className="mb-2 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">Original Text</label>
-              <button onClick={() => setLeftText('')} className="text-xs text-dark-200 hover:text-dark-100">Clear</button>
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">Original Text</label>
+              <button onClick={() => setLeftText('')} className="text-xs text-light-500 dark:text-dark-200 hover:text-light-700 dark:hover:text-dark-100">Clear</button>
             </div>
             <textarea
               value={leftText}
               onChange={(e) => setLeftText(e.target.value)}
-              className="input-dark h-48 w-full resize-none rounded-lg p-3 font-mono text-sm text-dark-50"
+              className="input-dark h-48 w-full resize-none rounded-lg p-3 font-mono text-sm text-light-900 dark:text-dark-50"
               placeholder="Paste original text here..."
             />
           </div>
           <div className="glass-card rounded-xl p-4">
             <div className="mb-2 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">Modified Text</label>
-              <button onClick={() => setRightText('')} className="text-xs text-dark-200 hover:text-dark-100">Clear</button>
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">Modified Text</label>
+              <button onClick={() => setRightText('')} className="text-xs text-light-500 dark:text-dark-200 hover:text-light-700 dark:hover:text-dark-100">Clear</button>
             </div>
             <textarea
               value={rightText}
               onChange={(e) => setRightText(e.target.value)}
-              className="input-dark h-48 w-full resize-none rounded-lg p-3 font-mono text-sm text-dark-50"
+              className="input-dark h-48 w-full resize-none rounded-lg p-3 font-mono text-sm text-light-900 dark:text-dark-50"
               placeholder="Paste modified text here..."
             />
           </div>
@@ -104,7 +104,7 @@ export default function TextDiff() {
         {diffResult.length > 0 && (
           <div className="mt-6 animate-fade-in-up">
             <div className="glass-card rounded-xl p-4">
-              <h3 className="mb-3 text-sm font-medium text-dark-100">Diff Result</h3>
+              <h3 className="mb-3 text-sm font-medium text-light-700 dark:text-dark-100">Diff Result</h3>
               <div className="max-h-96 overflow-auto rounded-lg font-mono text-sm">
                 {diffResult.map((line, index) => (
                   <div
@@ -114,7 +114,7 @@ export default function TextDiff() {
                         ? 'bg-green-500/20 text-green-400'
                         : line.type === 'removed'
                         ? 'bg-red-500/20 text-red-400'
-                        : 'text-dark-100'
+                        : 'text-light-700 dark:text-dark-100'
                     }`}
                   >
                     <span className="mr-2 select-none">
@@ -131,8 +131,8 @@ export default function TextDiff() {
         <AdCard slot="YOUR_AD_SLOT_DIFF_2" />
 
         <section className="glass-card mt-10 rounded-xl p-6 animate-fade-in-up">
-          <h2 className="mb-2 text-lg font-semibold font-display text-dark-50">About Text Diff</h2>
-          <p className="text-sm leading-relaxed text-dark-200">Compare two versions of text to see what changed. Added lines are shown in green, removed lines in red.</p>
+          <h2 className="mb-2 text-lg font-semibold font-display text-light-900 dark:text-dark-50">About Text Diff</h2>
+          <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">Compare two versions of text to see what changed. Added lines are shown in green, removed lines in red.</p>
         </section>
       </main>
       <Footer />

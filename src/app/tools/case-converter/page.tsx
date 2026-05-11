@@ -132,10 +132,10 @@ export default function CaseConverter() {
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 font-display text-3xl font-bold text-dark-50">
+          <h1 className="mb-2 font-display text-3xl font-bold text-light-900 dark:text-dark-50">
             Case Converter
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Convert text between different cases: Upper, Lower, Camel, Pascal, Snake, Kebab, and more.
           </p>
         </div>
@@ -146,10 +146,10 @@ export default function CaseConverter() {
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
             <div className="mb-2 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">Input Text</label>
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">Input Text</label>
               <button
                 onClick={clearInput}
-                className="text-xs text-dark-200 hover:text-dark-50"
+                className="text-xs text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50"
               >
                 Clear
               </button>
@@ -157,7 +157,7 @@ export default function CaseConverter() {
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="input-dark h-32 w-full rounded-lg p-4 text-dark-50"
+              className="input-dark h-32 w-full rounded-lg p-4 text-light-900 dark:text-dark-50"
               placeholder="Enter text to convert..."
             />
           </div>
@@ -167,7 +167,7 @@ export default function CaseConverter() {
         <div className="mt-6 grid gap-4 animate-fade-in-up md:grid-cols-2 lg:grid-cols-3">
           {conversions.map((conversion) => (
             <div key={conversion.key} className="glass-card rounded-xl p-4">
-              <label className="mb-2 block text-xs font-medium text-dark-200">
+              <label className="mb-2 block text-xs font-medium text-light-500 dark:text-dark-200">
                 {conversion.label}
               </label>
               <div className="flex gap-2">
@@ -175,7 +175,7 @@ export default function CaseConverter() {
                   type="text"
                   readOnly
                   value={conversion.value}
-                  className="input-dark flex-1 rounded-lg bg-dark-600 p-2 font-mono text-sm text-dark-50"
+                  className="input-dark flex-1 rounded-lg bg-gray-100 dark:bg-dark-600 p-2 font-mono text-sm text-light-900 dark:text-dark-50"
                 />
                 <button
                   onClick={() => copyToClipboard(conversion.value, conversion.key)}
@@ -191,30 +191,30 @@ export default function CaseConverter() {
         <AdCard slot="YOUR_AD_SLOT_CASE_2" />
 
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-2 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-2 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             Case Types Explained
           </h2>
-          <div className="grid gap-4 text-sm text-dark-200 md:grid-cols-2">
+          <div className="grid gap-4 text-sm text-light-500 dark:text-dark-200 md:grid-cols-2">
             <div>
               <p className="mb-1">
-                <strong className="text-dark-100">camelCase:</strong> First word lowercase, subsequent words capitalized
+                <strong className="text-light-700 dark:text-dark-100">camelCase:</strong> First word lowercase, subsequent words capitalized
               </p>
               <p className="mb-1">
-                <strong className="text-dark-100">PascalCase:</strong> All words capitalized, no separators
+                <strong className="text-light-700 dark:text-dark-100">PascalCase:</strong> All words capitalized, no separators
               </p>
               <p className="mb-1">
-                <strong className="text-dark-100">snake_case:</strong> Lowercase words separated by underscores
+                <strong className="text-light-700 dark:text-dark-100">snake_case:</strong> Lowercase words separated by underscores
               </p>
             </div>
             <div>
               <p className="mb-1">
-                <strong className="text-dark-100">kebab-case:</strong> Lowercase words separated by hyphens
+                <strong className="text-light-700 dark:text-dark-100">kebab-case:</strong> Lowercase words separated by hyphens
               </p>
               <p className="mb-1">
-                <strong className="text-dark-100">CONSTANT_CASE:</strong> Uppercase words separated by underscores
+                <strong className="text-light-700 dark:text-dark-100">CONSTANT_CASE:</strong> Uppercase words separated by underscores
               </p>
               <p className="mb-1">
-                <strong className="text-dark-100">Title Case:</strong> First letter of each word capitalized
+                <strong className="text-light-700 dark:text-dark-100">Title Case:</strong> First letter of each word capitalized
               </p>
             </div>
           </div>

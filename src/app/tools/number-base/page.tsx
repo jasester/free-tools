@@ -62,10 +62,10 @@ export default function NumberBaseConverter() {
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 font-display text-3xl font-bold text-dark-50">
+          <h1 className="mb-2 font-display text-3xl font-bold text-light-900 dark:text-dark-50">
             Number Base Converter
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Convert between Binary, Octal, Decimal, and Hexadecimal instantly.
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function NumberBaseConverter() {
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
             <div className="mb-4">
-              <label className="mb-2 block text-sm font-medium text-dark-100">
+              <label className="mb-2 block text-sm font-medium text-light-700 dark:text-dark-100">
                 Input Number
               </label>
               <div className="flex gap-3">
@@ -95,7 +95,7 @@ export default function NumberBaseConverter() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  className="input-dark flex-1 rounded-lg p-3 font-mono text-lg text-dark-50"
+                  className="input-dark flex-1 rounded-lg p-3 font-mono text-lg text-light-900 dark:text-dark-50"
                   placeholder={`Enter ${fromBase === 2 ? 'binary' : fromBase === 8 ? 'octal' : fromBase === 16 ? 'hexadecimal' : 'decimal'} number...`}
                 />
                 <button
@@ -116,11 +116,11 @@ export default function NumberBaseConverter() {
             return (
               <div key={base.value} className="glass-card rounded-xl p-4">
                 <div className="mb-2 flex items-center justify-between">
-                  <label className="text-sm font-medium text-dark-100">
+                  <label className="text-sm font-medium text-light-700 dark:text-dark-100">
                     {base.label}
                   </label>
                   {base.prefix && (
-                    <span className="text-xs text-dark-200">{base.prefix}</span>
+                    <span className="text-xs text-light-500 dark:text-dark-200">{base.prefix}</span>
                   )}
                 </div>
                 <div className="flex gap-2">
@@ -128,7 +128,7 @@ export default function NumberBaseConverter() {
                     type="text"
                     readOnly
                     value={result}
-                    className="input-dark flex-1 rounded-lg bg-dark-600 p-3 font-mono text-sm text-dark-50"
+                    className="input-dark flex-1 rounded-lg bg-gray-100 dark:bg-dark-600 p-3 font-mono text-sm text-light-900 dark:text-dark-50"
                   />
                   <button
                     onClick={() => copyToClipboard(result, base.label)}
@@ -145,21 +145,21 @@ export default function NumberBaseConverter() {
         <AdCard slot="YOUR_AD_SLOT_BASE_2" />
 
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-2 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-2 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             About Number Bases
           </h2>
-          <div className="space-y-2 text-sm text-dark-200">
+          <div className="space-y-2 text-sm text-light-500 dark:text-dark-200">
             <p>
-              <strong className="text-dark-100">Binary (Base 2):</strong> Uses digits 0-1. Fundamental for computer systems.
+              <strong className="text-light-700 dark:text-dark-100">Binary (Base 2):</strong> Uses digits 0-1. Fundamental for computer systems.
             </p>
             <p>
-              <strong className="text-dark-100">Octal (Base 8):</strong> Uses digits 0-7. Common in Unix file permissions.
+              <strong className="text-light-700 dark:text-dark-100">Octal (Base 8):</strong> Uses digits 0-7. Common in Unix file permissions.
             </p>
             <p>
-              <strong className="text-dark-100">Decimal (Base 10):</strong> Uses digits 0-9. Standard number system for everyday use.
+              <strong className="text-light-700 dark:text-dark-100">Decimal (Base 10):</strong> Uses digits 0-9. Standard number system for everyday use.
             </p>
             <p>
-              <strong className="text-dark-100">Hexadecimal (Base 16):</strong> Uses digits 0-9 and letters A-F. Widely used in programming and color codes.
+              <strong className="text-light-700 dark:text-dark-100">Hexadecimal (Base 16):</strong> Uses digits 0-9 and letters A-F. Widely used in programming and color codes.
             </p>
           </div>
         </section>

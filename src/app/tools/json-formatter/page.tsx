@@ -51,10 +51,10 @@ export default function JsonFormatter() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题 */}
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 text-3xl font-bold font-display text-dark-50">
+          <h1 className="mb-2 text-3xl font-bold font-display text-light-900 dark:text-dark-50">
             JSON Formatter
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Format, validate and beautify JSON data online.
           </p>
         </div>
@@ -65,19 +65,19 @@ export default function JsonFormatter() {
         <div className="mt-6 grid gap-4 lg:grid-cols-2 animate-fade-in-up">
           {/* 输入区域 */}
           <div>
-            <label className="mb-1 block text-sm font-medium text-dark-100">
+            <label className="mb-1 block text-sm font-medium text-light-700 dark:text-dark-100">
               Input
             </label>
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="input-dark h-80 w-full rounded-lg p-3 font-mono text-sm text-dark-50 placeholder-dark-200"
+              className="input-dark h-80 w-full rounded-lg p-3 font-mono text-sm text-light-900 dark:text-dark-50 placeholder-dark-200"
               placeholder='{"key": "value"}'
             />
           </div>
           {/* 输出区域 */}
           <div>
-            <label className="mb-1 block text-sm font-medium text-dark-100">
+            <label className="mb-1 block text-sm font-medium text-light-700 dark:text-dark-100">
               Output
             </label>
             {error ? (
@@ -88,7 +88,7 @@ export default function JsonFormatter() {
               <textarea
                 readOnly
                 value={output}
-                className="input-dark h-80 w-full rounded-lg bg-dark-600 p-3 font-mono text-sm text-dark-50 placeholder-dark-200 focus:outline-none"
+                className="input-dark h-80 w-full rounded-lg bg-gray-100 dark:bg-dark-600 p-3 font-mono text-sm text-light-900 dark:text-dark-50 placeholder-dark-200 focus:outline-none"
                 placeholder="Formatted JSON will appear here..."
               />
             )}
@@ -105,13 +105,13 @@ export default function JsonFormatter() {
           </button>
           <button
             onClick={minify}
-            className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-dark-100 transition"
+            className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-light-700 dark:text-dark-100 transition"
           >
             Minify
           </button>
           <button
             onClick={clear}
-            className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-dark-100 transition"
+            className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-light-700 dark:text-dark-100 transition"
           >
             Clear
           </button>
@@ -121,10 +121,10 @@ export default function JsonFormatter() {
 
         {/* 关于说明卡片 */}
         <section className="glass-card mt-10 rounded-xl p-6 animate-fade-in-up">
-          <h2 className="mb-2 text-lg font-semibold font-display text-dark-50">
+          <h2 className="mb-2 text-lg font-semibold font-display text-light-900 dark:text-dark-50">
             About JSON Formatter
           </h2>
-          <p className="text-sm leading-relaxed text-dark-200">
+          <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">
             JSON (JavaScript Object Notation) is a lightweight data-interchange format.
             Use this free online JSON formatter to beautify, validate and minify JSON data.
             All processing happens in your browser - your data is never uploaded to any server.

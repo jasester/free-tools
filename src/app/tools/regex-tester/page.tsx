@@ -38,10 +38,10 @@ export default function RegexTester() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
-        <h1 className="mb-2 animate-fade-in-up font-display text-2xl font-bold text-dark-50">
+        <h1 className="mb-2 animate-fade-in-up font-display text-2xl font-bold text-light-900 dark:text-dark-50">
           Regex Tester
         </h1>
-        <p className="mb-6 animate-fade-in-up text-dark-200">
+        <p className="mb-6 animate-fade-in-up text-light-500 dark:text-dark-200">
           Test and debug regular expressions online with match highlighting.
         </p>
 
@@ -49,11 +49,11 @@ export default function RegexTester() {
 
         <div className="glass-card mt-6 animate-fade-in-up rounded-lg p-6">
           <div className="mb-4">
-            <label className="mb-1 block text-sm font-medium text-dark-100">
+            <label className="mb-1 block text-sm font-medium text-light-700 dark:text-dark-100">
               Pattern
             </label>
             <div className="flex gap-2">
-              <span className="input-dark flex items-center rounded-lg border px-3 font-mono text-dark-200">
+              <span className="input-dark flex items-center rounded-lg border px-3 font-mono text-light-500 dark:text-dark-200">
                 /
               </span>
               <input
@@ -62,7 +62,7 @@ export default function RegexTester() {
                 className="input-dark flex-1 rounded-lg p-3 font-mono text-sm"
                 placeholder="\d+"
               />
-              <span className="input-dark flex items-center rounded-lg border px-3 font-mono text-dark-200">
+              <span className="input-dark flex items-center rounded-lg border px-3 font-mono text-light-500 dark:text-dark-200">
                 /
               </span>
               <input
@@ -75,7 +75,7 @@ export default function RegexTester() {
           </div>
 
           <div className="mb-4">
-            <label className="mb-1 block text-sm font-medium text-dark-100">
+            <label className="mb-1 block text-sm font-medium text-light-700 dark:text-dark-100">
               Test String
             </label>
             <textarea
@@ -101,7 +101,7 @@ export default function RegexTester() {
 
           {matches.length > 0 && (
             <div className="mt-4">
-              <p className="mb-2 text-sm font-medium text-dark-100">
+              <p className="mb-2 text-sm font-medium text-light-700 dark:text-dark-100">
                 Matches ({matches.length}):
               </p>
               <div className="rounded-lg bg-green-500/10 p-4 font-mono text-sm">
@@ -121,21 +121,21 @@ export default function RegexTester() {
         <AdCard slot="YOUR_AD_SLOT_14" />
 
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-2 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-2 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             Common Regex Patterns
           </h2>
-          <div className="mt-3 space-y-2 text-sm text-dark-100">
-            <div className="rounded bg-dark-600 px-3 py-2 font-mono">
-              <code className="text-dark-50">\\d+</code> — One or more digits
+          <div className="mt-3 space-y-2 text-sm text-light-700 dark:text-dark-100">
+            <div className="rounded bg-gray-100 dark:bg-dark-600 px-3 py-2 font-mono">
+              <code className="text-light-900 dark:text-dark-50">\\d+</code> — One or more digits
             </div>
-            <div className="rounded bg-dark-600 px-3 py-2 font-mono">
-              <code className="text-dark-50">\\w+</code> — One or more word characters
+            <div className="rounded bg-gray-100 dark:bg-dark-600 px-3 py-2 font-mono">
+              <code className="text-light-900 dark:text-dark-50">\\w+</code> — One or more word characters
             </div>
-            <div className="rounded bg-dark-600 px-3 py-2 font-mono">
-              <code className="text-dark-50">^https?://</code> — URLs starting with http/https
+            <div className="rounded bg-gray-100 dark:bg-dark-600 px-3 py-2 font-mono">
+              <code className="text-light-900 dark:text-dark-50">^https?://</code> — URLs starting with http/https
             </div>
-            <div className="rounded bg-dark-600 px-3 py-2 font-mono">
-              <code className="text-dark-50">[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]&#123;2,&#125;</code> — Email
+            <div className="rounded bg-gray-100 dark:bg-dark-600 px-3 py-2 font-mono">
+              <code className="text-light-900 dark:text-dark-50">[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]&#123;2,&#125;</code> — Email
             </div>
           </div>
         </section>

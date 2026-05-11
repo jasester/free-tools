@@ -222,10 +222,10 @@ export default function UnitConverter() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题 */}
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 font-display text-3xl font-bold text-dark-50">
+          <h1 className="mb-2 font-display text-3xl font-bold text-light-900 dark:text-dark-50">
             Unit Converter
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Convert between different units of measurement. Length, weight, temperature, and more.
           </p>
         </div>
@@ -243,7 +243,7 @@ export default function UnitConverter() {
                   className={`rounded-lg px-4 py-2 text-sm font-medium transition ${
                     category === cat
                       ? 'btn-gradient text-white'
-                      : 'btn-ghost text-dark-100 hover:text-dark-50'
+                      : 'btn-ghost text-light-700 dark:text-dark-100 hover:text-light-900 dark:hover:text-dark-50'
                   }`}
                 >
                   {unitCategories[cat].name}
@@ -259,20 +259,20 @@ export default function UnitConverter() {
             <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
               {/* 输入区域 */}
               <div>
-                <label className="mb-2 block text-sm font-medium text-dark-100">
+                <label className="mb-2 block text-sm font-medium text-light-700 dark:text-dark-100">
                   From
                 </label>
                 <input
                   type="number"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
-                  className="input-dark mb-3 w-full rounded-lg px-4 py-3 text-lg text-dark-50"
+                  className="input-dark mb-3 w-full rounded-lg px-4 py-3 text-lg text-light-900 dark:text-dark-50"
                   placeholder="Enter value"
                 />
                 <select
                   value={fromUnit}
                   onChange={(e) => setFromUnit(e.target.value)}
-                  className="input-dark w-full rounded-lg px-4 py-2 text-dark-50"
+                  className="input-dark w-full rounded-lg px-4 py-2 text-light-900 dark:text-dark-50"
                 >
                   {currentCategory.units.map((unit) => (
                     <option key={unit.id} value={unit.id}>
@@ -286,9 +286,9 @@ export default function UnitConverter() {
               <div className="flex justify-center">
                 <button
                   onClick={swapUnits}
-                  className="rounded-full border border-white/10 bg-dark-600/50 p-3 transition hover:bg-dark-500/50"
+                  className="rounded-full border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-dark-600/50 p-3 transition hover:bg-gray-300/50 dark:hover:bg-dark-500/50"
                 >
-                  <svg className="h-5 w-5 text-dark-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-5 w-5 text-light-700 dark:text-dark-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                   </svg>
                 </button>
@@ -296,16 +296,16 @@ export default function UnitConverter() {
 
               {/* 输出区域 */}
               <div>
-                <label className="mb-2 block text-sm font-medium text-dark-100">
+                <label className="mb-2 block text-sm font-medium text-light-700 dark:text-dark-100">
                   To
                 </label>
-                <div className="mb-3 min-h-[54px] rounded-lg bg-dark-600/50 px-4 py-3 text-lg font-mono text-emerald-400">
+                <div className="mb-3 min-h-[54px] rounded-lg bg-gray-100 dark:bg-dark-600/50 px-4 py-3 text-lg font-mono text-emerald-400">
                   {result !== null ? result.toLocaleString(undefined, { maximumFractionDigits: 10 }) : '-'}
                 </div>
                 <select
                   value={toUnit}
                   onChange={(e) => setToUnit(e.target.value)}
-                  className="input-dark w-full rounded-lg px-4 py-2 text-dark-50"
+                  className="input-dark w-full rounded-lg px-4 py-2 text-light-900 dark:text-dark-50"
                 >
                   {currentCategory.units.map((unit) => (
                     <option key={unit.id} value={unit.id}>
@@ -321,7 +321,7 @@ export default function UnitConverter() {
         {/* 常用转换表 */}
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <h3 className="mb-4 font-display text-lg font-semibold text-dark-50">
+            <h3 className="mb-4 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
               Common Conversions
             </h3>
             <div className="grid gap-2 text-sm md:grid-cols-2">
@@ -338,11 +338,11 @@ export default function UnitConverter() {
                 }
                 const fromUnitSymbol = currentCategory.units.find((u) => u.id === fromUnit)?.symbol || '';
                 return (
-                  <div key={unit.id} className="flex justify-between rounded-lg bg-dark-600/30 px-4 py-2">
-                    <span className="text-dark-200">
+                  <div key={unit.id} className="flex justify-between rounded-lg bg-gray-50 dark:bg-dark-600/30 px-4 py-2">
+                    <span className="text-light-500 dark:text-dark-200">
                       {inputValue || '0'} {fromUnitSymbol} =
                     </span>
-                    <span className="font-mono text-dark-50">
+                    <span className="font-mono text-light-900 dark:text-dark-50">
                       {convertedValue.toLocaleString(undefined, { maximumFractionDigits: 6 })} {unit.symbol}
                     </span>
                   </div>
@@ -356,36 +356,36 @@ export default function UnitConverter() {
 
         {/* 使用说明 */}
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-4 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-4 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             About Unit Converter
           </h2>
-          <div className="grid gap-4 text-sm text-dark-200 md:grid-cols-2">
+          <div className="grid gap-4 text-sm text-light-500 dark:text-dark-200 md:grid-cols-2">
             <div>
               <p className="mb-2">
-                <strong className="text-dark-100">Length:</strong> Metric and imperial units including meters, feet, miles
+                <strong className="text-light-700 dark:text-dark-100">Length:</strong> Metric and imperial units including meters, feet, miles
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">Weight:</strong> Grams, kilograms, pounds, ounces, and more
+                <strong className="text-light-700 dark:text-dark-100">Weight:</strong> Grams, kilograms, pounds, ounces, and more
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">Temperature:</strong> Celsius, Fahrenheit, and Kelvin conversions
+                <strong className="text-light-700 dark:text-dark-100">Temperature:</strong> Celsius, Fahrenheit, and Kelvin conversions
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">Area:</strong> Square meters, acres, hectares, square miles
+                <strong className="text-light-700 dark:text-dark-100">Area:</strong> Square meters, acres, hectares, square miles
               </p>
             </div>
             <div>
               <p className="mb-2">
-                <strong className="text-dark-100">Volume:</strong> Liters, gallons, cups, fluid ounces
+                <strong className="text-light-700 dark:text-dark-100">Volume:</strong> Liters, gallons, cups, fluid ounces
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">Speed:</strong> m/s, km/h, mph, knots, and Mach
+                <strong className="text-light-700 dark:text-dark-100">Speed:</strong> m/s, km/h, mph, knots, and Mach
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">Pressure:</strong> Pascal, bar, PSI, atmosphere
+                <strong className="text-light-700 dark:text-dark-100">Pressure:</strong> Pascal, bar, PSI, atmosphere
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">Data:</strong> Bytes, KB, MB, GB, TB, PB
+                <strong className="text-light-700 dark:text-dark-100">Data:</strong> Bytes, KB, MB, GB, TB, PB
               </p>
             </div>
           </div>

@@ -50,10 +50,10 @@ export default function QRGenerator() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题区域 */}
         <div className="animate-fade-in-up">
-          <h1 className="font-display mb-2 text-2xl font-bold text-dark-50">
+          <h1 className="font-display mb-2 text-2xl font-bold text-light-900 dark:text-dark-50">
             QR Code Generator
           </h1>
-          <p className="mb-6 text-sm text-dark-200">
+          <p className="mb-6 text-sm text-light-500 dark:text-dark-200">
             Generate QR codes from text or URLs. Free online QR code maker.
           </p>
         </div>
@@ -64,13 +64,13 @@ export default function QRGenerator() {
         <div className="mt-6 max-w-lg animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
             <div className="mb-4">
-              <label className="mb-1.5 block text-sm font-medium text-dark-100">
+              <label className="mb-1.5 block text-sm font-medium text-light-700 dark:text-dark-100">
                 Text or URL
               </label>
               <textarea
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                className="input-dark h-24 w-full rounded-lg p-3 text-sm text-dark-50 placeholder-dark-200"
+                className="input-dark h-24 w-full rounded-lg p-3 text-sm text-light-900 dark:text-dark-50 placeholder-dark-200"
                 placeholder="https://example.com"
               />
             </div>
@@ -99,7 +99,7 @@ export default function QRGenerator() {
               </div>
               <button
                 onClick={download}
-                className="btn-ghost mt-4 rounded-lg px-5 py-2.5 text-sm font-medium text-dark-100 transition"
+                className="btn-ghost mt-4 rounded-lg px-5 py-2.5 text-sm font-medium text-light-700 dark:text-dark-100 transition"
               >
                 Download PNG
               </button>
@@ -112,10 +112,10 @@ export default function QRGenerator() {
         {/* 关于说明区域 */}
         <section className="mt-10 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <h2 className="font-display mb-2 text-lg font-semibold text-dark-50">
+            <h2 className="font-display mb-2 text-lg font-semibold text-light-900 dark:text-dark-50">
               About QR Code Generator
             </h2>
-            <p className="text-sm leading-relaxed text-dark-200">
+            <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">
               QR codes can encode URLs, text, contact information, and more.
               This generator runs entirely in your browser. No server upload required.
               Use it for website links, WiFi passwords, social media, and business cards.

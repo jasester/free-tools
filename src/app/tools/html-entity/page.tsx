@@ -121,10 +121,10 @@ export default function HtmlEntity() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题 */}
         <div className="animate-fade-in-up">
-          <h1 className="font-display mb-2 text-2xl font-bold text-dark-50">
+          <h1 className="font-display mb-2 text-2xl font-bold text-light-900 dark:text-dark-50">
             HTML Entity Encoder / Decoder
           </h1>
-          <p className="mb-6 text-sm text-dark-200">
+          <p className="mb-6 text-sm text-light-500 dark:text-dark-200">
             Convert special characters to HTML entities and back. Prevent XSS and fix encoding issues.
           </p>
         </div>
@@ -136,7 +136,7 @@ export default function HtmlEntity() {
           {/* 输入区域 */}
           <div>
             <div className="mb-1 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">Input</label>
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">Input</label>
               <button
                 onClick={swap}
                 className="text-xs text-blue-400 hover:underline"
@@ -155,7 +155,7 @@ export default function HtmlEntity() {
           {/* 输出区域 */}
           <div>
             <div className="mb-1 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">Output</label>
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">Output</label>
               {output && (
                 <button
                   onClick={copyOutput}
@@ -173,7 +173,7 @@ export default function HtmlEntity() {
               <textarea
                 readOnly
                 value={output}
-                className="input-dark h-60 w-full rounded-lg bg-dark-600 p-3 font-mono text-sm"
+                className="input-dark h-60 w-full rounded-lg bg-gray-100 dark:bg-dark-600 p-3 font-mono text-sm"
                 placeholder="Result will appear here..."
               />
             )}
@@ -196,7 +196,7 @@ export default function HtmlEntity() {
           </button>
           <button
             onClick={clear}
-            className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-dark-100 transition"
+            className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-light-700 dark:text-dark-100 transition"
           >
             Clear
           </button>
@@ -207,24 +207,24 @@ export default function HtmlEntity() {
         {/* 参考表格 */}
         <section className="mt-10 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <h2 className="font-display mb-4 text-lg font-semibold text-dark-50">
+            <h2 className="font-display mb-4 text-lg font-semibold text-light-900 dark:text-dark-50">
               Common HTML Entities Reference
             </h2>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-dark-300/50">
-                    <th className="pb-2 text-left font-medium text-dark-100">Character</th>
-                    <th className="pb-2 text-left font-medium text-dark-100">Entity</th>
-                    <th className="pb-2 text-left font-medium text-dark-100">Description</th>
+                  <tr className="border-b border-gray-300/50 dark:border-dark-300/50">
+                    <th className="pb-2 text-left font-medium text-light-700 dark:text-dark-100">Character</th>
+                    <th className="pb-2 text-left font-medium text-light-700 dark:text-dark-100">Entity</th>
+                    <th className="pb-2 text-left font-medium text-light-700 dark:text-dark-100">Description</th>
                   </tr>
                 </thead>
                 <tbody>
                   {REFERENCE_CHARS.map((item) => (
-                    <tr key={item.entity} className="border-b border-dark-300/20">
-                      <td className="py-2 font-mono text-dark-50">{item.char === ' ' ? '(space)' : item.char}</td>
+                    <tr key={item.entity} className="border-b border-gray-300/20 dark:border-dark-300/20">
+                      <td className="py-2 font-mono text-light-900 dark:text-dark-50">{item.char === ' ' ? '(space)' : item.char}</td>
                       <td className="py-2 font-mono text-blue-400">{item.entity}</td>
-                      <td className="py-2 text-dark-200">{item.desc}</td>
+                      <td className="py-2 text-light-500 dark:text-dark-200">{item.desc}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -236,10 +236,10 @@ export default function HtmlEntity() {
         {/* 说明区域 */}
         <section className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <h2 className="font-display mb-2 text-lg font-semibold text-dark-50">
+            <h2 className="font-display mb-2 text-lg font-semibold text-light-900 dark:text-dark-50">
               About HTML Entities
             </h2>
-            <p className="text-sm leading-relaxed text-dark-200">
+            <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">
               HTML entities are used to display reserved characters in HTML that would
               otherwise be interpreted as HTML code. For example, &lt; displays a less-than
               sign instead of starting an HTML tag. Encoding user input is a key defense

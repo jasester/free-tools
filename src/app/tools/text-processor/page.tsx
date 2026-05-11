@@ -159,10 +159,10 @@ export default function TextProcessor() {
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 font-display text-3xl font-bold text-dark-50">
+          <h1 className="mb-2 font-display text-3xl font-bold text-light-900 dark:text-dark-50">
             Text Processor
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Remove duplicates, sort lines, reverse text, shuffle, and more text operations.
           </p>
         </div>
@@ -173,10 +173,10 @@ export default function TextProcessor() {
         <div className="mt-6 grid animate-fade-in-up gap-4 lg:grid-cols-2">
           <div>
             <div className="mb-1 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">Input Text</label>
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">Input Text</label>
               <button
                 onClick={clearAll}
-                className="text-xs text-dark-200 hover:text-dark-50"
+                className="text-xs text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50"
               >
                 Clear
               </button>
@@ -184,13 +184,13 @@ export default function TextProcessor() {
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="input-dark h-64 w-full rounded-lg p-4 font-mono text-sm text-dark-50"
+              className="input-dark h-64 w-full rounded-lg p-4 font-mono text-sm text-light-900 dark:text-dark-50"
               placeholder="Enter text here, one item per line..."
             />
           </div>
           <div>
             <div className="mb-1 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">Output</label>
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">Output</label>
               <button
                 onClick={copyOutput}
                 className="text-xs text-blue-400 hover:underline"
@@ -201,7 +201,7 @@ export default function TextProcessor() {
             <textarea
               readOnly
               value={output}
-              className="input-dark h-64 w-full rounded-lg bg-dark-600 p-4 font-mono text-sm text-dark-50"
+              className="input-dark h-64 w-full rounded-lg bg-gray-100 dark:bg-dark-600 p-4 font-mono text-sm text-light-900 dark:text-dark-50"
               placeholder="Result will appear here..."
             />
           </div>
@@ -210,13 +210,13 @@ export default function TextProcessor() {
         {/* 操作按钮 */}
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-4">
-            <h3 className="mb-3 text-sm font-medium text-dark-100">Operations</h3>
+            <h3 className="mb-3 text-sm font-medium text-light-700 dark:text-dark-100">Operations</h3>
             <div className="grid gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {operations.map((op) => (
                 <button
                   key={op.label}
                   onClick={op.action}
-                  className="btn-ghost rounded-lg px-4 py-2.5 text-sm font-medium transition hover:bg-dark-500"
+                  className="btn-ghost rounded-lg px-4 py-2.5 text-sm font-medium transition hover:bg-gray-300 dark:hover:bg-dark-500"
                 >
                   {op.label}
                 </button>
@@ -228,30 +228,30 @@ export default function TextProcessor() {
         <AdCard slot="YOUR_AD_SLOT_TEXT_2" />
 
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-2 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-2 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             Text Operations Guide
           </h2>
-          <div className="grid gap-4 text-sm text-dark-200 md:grid-cols-2">
+          <div className="grid gap-4 text-sm text-light-500 dark:text-dark-200 md:grid-cols-2">
             <div>
               <p className="mb-1">
-                <strong className="text-dark-100">Remove Duplicates:</strong> Keeps only the first occurrence of each line
+                <strong className="text-light-700 dark:text-dark-100">Remove Duplicates:</strong> Keeps only the first occurrence of each line
               </p>
               <p className="mb-1">
-                <strong className="text-dark-100">Sort A-Z / Z-A:</strong> Alphabetical sorting in ascending or descending order
+                <strong className="text-light-700 dark:text-dark-100">Sort A-Z / Z-A:</strong> Alphabetical sorting in ascending or descending order
               </p>
               <p className="mb-1">
-                <strong className="text-dark-100">Sort by Length:</strong> Sort lines by character count
+                <strong className="text-light-700 dark:text-dark-100">Sort by Length:</strong> Sort lines by character count
               </p>
             </div>
             <div>
               <p className="mb-1">
-                <strong className="text-dark-100">Reverse Text:</strong> Reverse the entire text character by character
+                <strong className="text-light-700 dark:text-dark-100">Reverse Text:</strong> Reverse the entire text character by character
               </p>
               <p className="mb-1">
-                <strong className="text-dark-100">Shuffle Lines:</strong> Randomly reorder all lines
+                <strong className="text-light-700 dark:text-dark-100">Shuffle Lines:</strong> Randomly reorder all lines
               </p>
               <p className="mb-1">
-                <strong className="text-dark-100">Trim Lines:</strong> Remove leading and trailing whitespace from each line
+                <strong className="text-light-700 dark:text-dark-100">Trim Lines:</strong> Remove leading and trailing whitespace from each line
               </p>
             </div>
           </div>

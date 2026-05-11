@@ -56,10 +56,10 @@ export default function Base64() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
-        <h1 className="mb-2 animate-fade-in-up font-display text-2xl font-bold text-dark-50">
+        <h1 className="mb-2 animate-fade-in-up font-display text-2xl font-bold text-light-900 dark:text-dark-50">
           Base64 Encoder / Decoder
         </h1>
-        <p className="mb-6 animate-fade-in-up text-dark-200">
+        <p className="mb-6 animate-fade-in-up text-light-500 dark:text-dark-200">
           Encode text to Base64 or decode Base64 to text instantly online.
         </p>
 
@@ -68,7 +68,7 @@ export default function Base64() {
         <div className="mt-6 grid animate-fade-in-up gap-4 lg:grid-cols-2">
           <div>
             <div className="mb-1 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">
                 {mode === 'encode' ? 'Plain Text' : 'Base64 String'}
               </label>
               <button
@@ -86,7 +86,7 @@ export default function Base64() {
             />
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium text-dark-100">
+            <label className="mb-1 block text-sm font-medium text-light-700 dark:text-dark-100">
               {mode === 'encode' ? 'Base64 Output' : 'Decoded Text'}
             </label>
             {error ? (
@@ -97,7 +97,7 @@ export default function Base64() {
               <textarea
                 readOnly
                 value={output}
-                className="input-dark h-60 w-full rounded-lg bg-dark-600 p-3 font-mono text-sm"
+                className="input-dark h-60 w-full rounded-lg bg-gray-100 dark:bg-dark-600 p-3 font-mono text-sm"
                 placeholder="Result will appear here..."
               />
             )}
@@ -119,7 +119,7 @@ export default function Base64() {
           </button>
           <button
             onClick={clear}
-            className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-dark-100 transition"
+            className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-light-700 dark:text-dark-100 transition"
           >
             Clear
           </button>
@@ -128,10 +128,10 @@ export default function Base64() {
         <AdCard slot="YOUR_AD_SLOT_16" />
 
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-2 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-2 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             About Base64
           </h2>
-          <p className="text-sm leading-relaxed text-dark-200">
+          <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">
             Base64 is a binary-to-text encoding scheme that represents binary data in
             an ASCII string format. It is commonly used for data transmission, email
             attachments, embedding images in HTML/CSS, and API authentication tokens.

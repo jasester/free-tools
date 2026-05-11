@@ -164,10 +164,10 @@ export default function PortScanner() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题 */}
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 font-display text-3xl font-bold text-dark-50">
+          <h1 className="mb-2 font-display text-3xl font-bold text-light-900 dark:text-dark-50">
             Port Scanner & Lookup
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Look up common port numbers and their services. Reference guide for network ports.
           </p>
         </div>
@@ -177,7 +177,7 @@ export default function PortScanner() {
         {/* 自定义端口查询 */}
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <h3 className="mb-4 font-display text-lg font-semibold text-dark-50">
+            <h3 className="mb-4 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
               Port Lookup
             </h3>
             <div className="flex gap-3">
@@ -186,7 +186,7 @@ export default function PortScanner() {
                 value={customPort}
                 onChange={(e) => setCustomPort(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && queryCustomPort()}
-                className="input-dark flex-1 rounded-lg px-4 py-3 text-dark-50"
+                className="input-dark flex-1 rounded-lg px-4 py-3 text-light-900 dark:text-dark-50"
                 placeholder="Enter port number (1-65535)"
                 min="1"
                 max="65535"
@@ -200,19 +200,19 @@ export default function PortScanner() {
             </div>
 
             {customPortInfo && (
-              <div className="mt-4 rounded-lg border border-white/10 bg-dark-600/50 p-4">
+              <div className="mt-4 rounded-lg border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-dark-600/50 p-4">
                 <div className="flex items-center gap-4">
                   <div className="text-3xl font-bold text-emerald-400">{customPortInfo.port}</div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-dark-50">{customPortInfo.service}</span>
+                      <span className="font-semibold text-light-900 dark:text-dark-50">{customPortInfo.service}</span>
                       <span className={`rounded-full px-2 py-0.5 text-xs ${getCategoryStyle(customPortInfo.category)}`}>
                         {customPortInfo.category}
                       </span>
                     </div>
-                    <div className="text-sm text-dark-200">{customPortInfo.description}</div>
-                    <div className="mt-1 text-xs text-dark-300">
-                      Protocol: <span className="text-dark-100">{customPortInfo.protocol}</span>
+                    <div className="text-sm text-light-500 dark:text-dark-200">{customPortInfo.description}</div>
+                    <div className="mt-1 text-xs text-light-600 dark:text-dark-300">
+                      Protocol: <span className="text-light-700 dark:text-dark-100">{customPortInfo.protocol}</span>
                     </div>
                   </div>
                 </div>
@@ -232,7 +232,7 @@ export default function PortScanner() {
                   className={`rounded-lg px-4 py-2 text-sm font-medium transition ${
                     activeCategory === cat.id
                       ? 'btn-gradient text-white'
-                      : 'btn-ghost text-dark-100 hover:text-dark-50'
+                      : 'btn-ghost text-light-700 dark:text-dark-100 hover:text-light-900 dark:hover:text-dark-50'
                   }`}
                 >
                   {cat.name}
@@ -246,7 +246,7 @@ export default function PortScanner() {
         <div className="mt-4 animate-fade-in-up">
           <div className="glass-card rounded-xl p-3">
             <div className="flex items-center gap-3 px-3">
-              <svg className="h-5 w-5 text-dark-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-5 w-5 text-light-500 dark:text-dark-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <input
@@ -254,10 +254,10 @@ export default function PortScanner() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search ports, services..."
-                className="flex-1 bg-transparent py-2 text-dark-50 placeholder:text-dark-200 focus:outline-none"
+                className="flex-1 bg-transparent py-2 text-light-900 dark:text-dark-50 placeholder:text-light-400 dark:placeholder:text-dark-200 focus:outline-none"
               />
               {searchQuery && (
-                <button onClick={() => setSearchQuery('')} className="text-dark-200 hover:text-dark-50">
+                <button onClick={() => setSearchQuery('')} className="text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50">
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -271,10 +271,10 @@ export default function PortScanner() {
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
             <div className="mb-4 flex items-center justify-between">
-              <h3 className="font-display text-lg font-semibold text-dark-50">
+              <h3 className="font-display text-lg font-semibold text-light-900 dark:text-dark-50">
                 Common Ports
               </h3>
-              <span className="text-sm text-dark-200">
+              <span className="text-sm text-light-500 dark:text-dark-200">
                 {filteredPorts.length} ports
               </span>
             </div>
@@ -283,20 +283,20 @@ export default function PortScanner() {
               {filteredPorts.map((port) => (
                 <div
                   key={port.port}
-                  className="flex items-center gap-3 rounded-lg border border-white/5 bg-dark-600/30 p-3 transition hover:border-white/10 hover:bg-dark-500/30"
+                  className="flex items-center gap-3 rounded-lg border border-gray-200 dark:border-white/5 bg-gray-50 dark:bg-dark-600/30 p-3 transition hover:border-gray-200 dark:border-white/10 hover:bg-gray-300/30 dark:hover:bg-dark-500/30"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-dark-500/50 font-mono text-lg font-bold text-emerald-400">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-200/50 dark:bg-dark-500/50 font-mono text-lg font-bold text-emerald-400">
                     {port.port}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="truncate font-medium text-dark-50">{port.service}</span>
+                      <span className="truncate font-medium text-light-900 dark:text-dark-50">{port.service}</span>
                       <span className={`shrink-0 rounded-full px-2 py-0.5 text-xs ${getCategoryStyle(port.category)}`}>
                         {port.category}
                       </span>
                     </div>
-                    <div className="truncate text-xs text-dark-200">{port.description}</div>
-                    <div className="mt-0.5 text-xs text-dark-300">{port.protocol}</div>
+                    <div className="truncate text-xs text-light-500 dark:text-dark-200">{port.description}</div>
+                    <div className="mt-0.5 text-xs text-light-600 dark:text-dark-300">{port.protocol}</div>
                   </div>
                 </div>
               ))}
@@ -305,7 +305,7 @@ export default function PortScanner() {
             {filteredPorts.length === 0 && (
               <div className="py-12 text-center">
                 <div className="mb-2 text-4xl">🔍</div>
-                <p className="text-dark-200">No ports found matching your search</p>
+                <p className="text-light-500 dark:text-dark-200">No ports found matching your search</p>
               </div>
             )}
           </div>
@@ -315,30 +315,30 @@ export default function PortScanner() {
 
         {/* 端口范围说明 */}
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-4 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-4 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             Port Number Ranges
           </h2>
-          <div className="grid gap-4 text-sm text-dark-200 md:grid-cols-2">
+          <div className="grid gap-4 text-sm text-light-500 dark:text-dark-200 md:grid-cols-2">
             <div>
               <p className="mb-2">
-                <strong className="text-dark-100">Well-Known Ports (0-1023):</strong>
+                <strong className="text-light-700 dark:text-dark-100">Well-Known Ports (0-1023):</strong>
                 <br />
                 系统保留端口，需要管理员权限
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">Registered Ports (1024-49151):</strong>
+                <strong className="text-light-700 dark:text-dark-100">Registered Ports (1024-49151):</strong>
                 <br />
                 注册端口，用于用户应用程序
               </p>
             </div>
             <div>
               <p className="mb-2">
-                <strong className="text-dark-100">Dynamic Ports (49152-65535):</strong>
+                <strong className="text-light-700 dark:text-dark-100">Dynamic Ports (49152-65535):</strong>
                 <br />
                 动态/私有端口，临时使用
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">Note:</strong>
+                <strong className="text-light-700 dark:text-dark-100">Note:</strong>
                 <br />
                 此工具仅提供端口信息查询，不执行实际端口扫描
               </p>

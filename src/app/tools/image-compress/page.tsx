@@ -70,10 +70,10 @@ export default function ImageCompress() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题 */}
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 text-3xl font-bold font-display text-dark-50">
+          <h1 className="mb-2 text-3xl font-bold font-display text-light-900 dark:text-dark-50">
             Image Compressor
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Compress JPEG and PNG images online. Reduce file size without losing quality.
           </p>
         </div>
@@ -84,7 +84,7 @@ export default function ImageCompress() {
         <div className="mt-6 animate-fade-in-up">
           {/* 质量滑块 */}
           <div className="glass-card mb-4 rounded-lg p-4">
-            <label className="mb-2 block text-sm font-medium text-dark-100">
+            <label className="mb-2 block text-sm font-medium text-light-700 dark:text-dark-100">
               Quality: {Math.round(quality * 100)}%
             </label>
             <input
@@ -104,13 +104,13 @@ export default function ImageCompress() {
             type="file"
             accept="image/jpeg,image/png"
             onChange={handleFile}
-            className="mb-4 block w-full max-w-md text-sm file:mr-4 file:rounded-lg file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-medium file:text-white hover:file:bg-blue-700 file:transition text-dark-200 file:cursor-pointer cursor-pointer"
+            className="mb-4 block w-full max-w-md text-sm file:mr-4 file:rounded-lg file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-medium file:text-white hover:file:bg-blue-700 file:transition text-light-500 dark:text-dark-200 file:cursor-pointer cursor-pointer"
           />
 
           {/* 文件大小信息 */}
           {original && (
             <div className="glass-card rounded-lg p-4">
-              <p className="text-sm text-dark-100">
+              <p className="text-sm text-light-700 dark:text-dark-100">
                 Original: {originalSize} → Compressed: {compressedSize}
                 {originalSize && compressedSize && (
                   <span className="ml-2 font-medium text-green-400">
@@ -132,7 +132,7 @@ export default function ImageCompress() {
               <img
                 src={compressed}
                 alt="Compressed preview"
-                className="max-h-96 rounded-lg border border-dark-600"
+                className="max-h-96 rounded-lg border border-gray-400 dark:border-dark-600"
               />
               <button
                 onClick={download}
@@ -148,10 +148,10 @@ export default function ImageCompress() {
 
         {/* 关于说明卡片 */}
         <section className="glass-card mt-10 rounded-xl p-6 animate-fade-in-up">
-          <h2 className="mb-2 text-lg font-semibold font-display text-dark-50">
+          <h2 className="mb-2 text-lg font-semibold font-display text-light-900 dark:text-dark-50">
             About Image Compressor
           </h2>
-          <p className="text-sm leading-relaxed text-dark-200">
+          <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">
             This free online image compressor uses browser-based compression.
             Your images never leave your device. Supports JPEG and PNG formats.
             Adjust the quality slider to balance between file size and image quality.

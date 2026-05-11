@@ -80,31 +80,31 @@ export default function CssMinifier() {
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 text-3xl font-bold font-display text-dark-50">CSS Minifier & Formatter</h1>
-          <p className="mb-6 text-dark-200">Minify or format CSS code instantly.</p>
+          <h1 className="mb-2 text-3xl font-bold font-display text-light-900 dark:text-dark-50">CSS Minifier & Formatter</h1>
+          <p className="mb-6 text-light-500 dark:text-dark-200">Minify or format CSS code instantly.</p>
         </div>
 
         <AdCard slot="YOUR_AD_SLOT_CSS_1" format="horizontal" />
 
-        <div className="mt-6 flex gap-1 rounded-lg bg-dark-600/50 p-1 w-fit animate-fade-in-up">
-          <button onClick={() => setAction('minify')} className={`rounded-md px-4 py-1.5 text-sm font-medium transition-all ${action === 'minify' ? 'btn-gradient text-white' : 'text-dark-200 hover:text-dark-50'}`}>Minify</button>
-          <button onClick={() => setAction('format')} className={`rounded-md px-4 py-1.5 text-sm font-medium transition-all ${action === 'format' ? 'btn-gradient text-white' : 'text-dark-200 hover:text-dark-50'}`}>Format</button>
+        <div className="mt-6 flex gap-1 rounded-lg bg-gray-100 dark:bg-dark-600/50 p-1 w-fit animate-fade-in-up">
+          <button onClick={() => setAction('minify')} className={`rounded-md px-4 py-1.5 text-sm font-medium transition-all ${action === 'minify' ? 'btn-gradient text-white' : 'text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50'}`}>Minify</button>
+          <button onClick={() => setAction('format')} className={`rounded-md px-4 py-1.5 text-sm font-medium transition-all ${action === 'format' ? 'btn-gradient text-white' : 'text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50'}`}>Format</button>
         </div>
 
         <div className="mt-6 grid gap-4 lg:grid-cols-2 animate-fade-in-up">
           <div className="glass-card rounded-xl p-4">
             <div className="mb-2 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">Input CSS</label>
-              <button onClick={() => setInput('')} className="text-xs text-dark-200 hover:text-dark-100">Clear</button>
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">Input CSS</label>
+              <button onClick={() => setInput('')} className="text-xs text-light-500 dark:text-dark-200 hover:text-light-700 dark:hover:text-dark-100">Clear</button>
             </div>
-            <textarea value={input} onChange={(e) => setInput(e.target.value)} className="input-dark h-64 w-full resize-none rounded-lg p-3 font-mono text-sm text-dark-50" placeholder="Paste your CSS code here..." />
+            <textarea value={input} onChange={(e) => setInput(e.target.value)} className="input-dark h-64 w-full resize-none rounded-lg p-3 font-mono text-sm text-light-900 dark:text-dark-50" placeholder="Paste your CSS code here..." />
           </div>
           <div className="glass-card rounded-xl p-4">
             <div className="mb-2 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">Output</label>
-              <button onClick={copyToClipboard} disabled={!output} className="text-xs text-dark-200 hover:text-dark-100 disabled:opacity-50">Copy</button>
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">Output</label>
+              <button onClick={copyToClipboard} disabled={!output} className="text-xs text-light-500 dark:text-dark-200 hover:text-light-700 dark:hover:text-dark-100 disabled:opacity-50">Copy</button>
             </div>
-            <textarea value={output} readOnly className="input-dark h-64 w-full resize-none rounded-lg bg-dark-600/50 p-3 font-mono text-sm text-dark-50" placeholder="Result will appear here..." />
+            <textarea value={output} readOnly className="input-dark h-64 w-full resize-none rounded-lg bg-gray-100 dark:bg-dark-600/50 p-3 font-mono text-sm text-light-900 dark:text-dark-50" placeholder="Result will appear here..." />
           </div>
         </div>
 
@@ -117,8 +117,8 @@ export default function CssMinifier() {
         <AdCard slot="YOUR_AD_SLOT_CSS_2" />
 
         <section className="glass-card mt-10 rounded-xl p-6 animate-fade-in-up">
-          <h2 className="mb-2 text-lg font-semibold font-display text-dark-50">About CSS Minifier</h2>
-          <p className="text-sm leading-relaxed text-dark-200">Minify CSS to reduce file size and improve page load times. Format minified CSS for better readability and maintenance.</p>
+          <h2 className="mb-2 text-lg font-semibold font-display text-light-900 dark:text-dark-50">About CSS Minifier</h2>
+          <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">Minify CSS to reduce file size and improve page load times. Format minified CSS for better readability and maintenance.</p>
         </section>
       </main>
       <Footer />

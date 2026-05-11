@@ -127,10 +127,10 @@ export default function JwtDecoder() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题 */}
         <div className="animate-fade-in-up">
-          <h1 className="font-display mb-2 text-2xl font-bold text-dark-50">
+          <h1 className="font-display mb-2 text-2xl font-bold text-light-900 dark:text-dark-50">
             JWT Decoder
           </h1>
-          <p className="mb-6 text-sm text-dark-200">
+          <p className="mb-6 text-sm text-light-500 dark:text-dark-200">
             Decode and inspect JSON Web Tokens. View Header, Payload, and check expiration.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function JwtDecoder() {
 
         {/* 输入区域 */}
         <div className="mt-6 animate-fade-in-up">
-          <label className="mb-1 block text-sm font-medium text-dark-100">
+          <label className="mb-1 block text-sm font-medium text-light-700 dark:text-dark-100">
             JWT Token
           </label>
           <textarea
@@ -160,7 +160,7 @@ export default function JwtDecoder() {
           </button>
           <button
             onClick={clear}
-            className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-dark-100 transition"
+            className="btn-ghost rounded-lg px-5 py-2.5 text-sm font-medium text-light-700 dark:text-dark-100 transition"
           >
             Clear
           </button>
@@ -190,7 +190,7 @@ export default function JwtDecoder() {
             {parts.map((part) => (
               <div key={part.label} className="glass-card animate-fade-in-up rounded-xl p-5">
                 <div className="mb-2 flex items-center justify-between">
-                  <h3 className="font-display text-base font-semibold text-dark-50">
+                  <h3 className="font-display text-base font-semibold text-light-900 dark:text-dark-50">
                     {part.label}
                   </h3>
                   {part.label !== 'Signature' && (
@@ -204,15 +204,15 @@ export default function JwtDecoder() {
                 </div>
                 {/* 原始 Base64URL */}
                 <div className="mb-3">
-                  <p className="mb-1 text-xs text-dark-200">Base64URL</p>
-                  <div className="rounded-lg bg-dark-600/50 p-2 font-mono text-xs text-dark-200 break-all">
+                  <p className="mb-1 text-xs text-light-500 dark:text-dark-200">Base64URL</p>
+                  <div className="rounded-lg bg-gray-100 dark:bg-dark-600/50 p-2 font-mono text-xs text-light-500 dark:text-dark-200 break-all">
                     {part.raw}
                   </div>
                 </div>
                 {/* 解码后内容 */}
                 <div>
-                  <p className="mb-1 text-xs text-dark-200">Decoded</p>
-                  <pre className="overflow-auto rounded-lg bg-dark-600/50 p-3 font-mono text-xs text-dark-100 whitespace-pre-wrap">
+                  <p className="mb-1 text-xs text-light-500 dark:text-dark-200">Decoded</p>
+                  <pre className="overflow-auto rounded-lg bg-gray-100 dark:bg-dark-600/50 p-3 font-mono text-xs text-light-700 dark:text-dark-100 whitespace-pre-wrap">
                     {part.decoded}
                   </pre>
                 </div>
@@ -226,10 +226,10 @@ export default function JwtDecoder() {
         {/* 说明区域 */}
         <section className="mt-10 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <h2 className="font-display mb-2 text-lg font-semibold text-dark-50">
+            <h2 className="font-display mb-2 text-lg font-semibold text-light-900 dark:text-dark-50">
               About JWT
             </h2>
-            <p className="text-sm leading-relaxed text-dark-200">
+            <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">
               A JSON Web Token (JWT) is a compact, URL-safe means of representing claims
               to be transferred between two parties. It consists of three parts: a Header
               (algorithm and token type), a Payload (claims such as user ID, roles, and

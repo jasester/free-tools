@@ -102,10 +102,10 @@ Word counters are useful for writers, students, and professionals who need to me
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 font-display text-3xl font-bold text-dark-50">
+          <h1 className="mb-2 font-display text-3xl font-bold text-light-900 dark:text-dark-50">
             Word Counter
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Count characters, words, lines, paragraphs, and estimate reading time.
           </p>
         </div>
@@ -116,9 +116,9 @@ Word counters are useful for writers, students, and professionals who need to me
         <div className="mt-6 grid animate-fade-in-up gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {statCards.map((card) => (
             <div key={card.label + card.subtext} className="glass-card rounded-xl p-4">
-              <div className="text-3xl font-bold text-dark-50">{card.value.toLocaleString()}</div>
-              <div className="text-sm font-medium text-dark-100">{card.label}</div>
-              <div className="text-xs text-dark-200">{card.subtext}</div>
+              <div className="text-3xl font-bold text-light-900 dark:text-dark-50">{card.value.toLocaleString()}</div>
+              <div className="text-sm font-medium text-light-700 dark:text-dark-100">{card.label}</div>
+              <div className="text-xs text-light-500 dark:text-dark-200">{card.subtext}</div>
             </div>
           ))}
         </div>
@@ -133,8 +133,8 @@ Word counters are useful for writers, students, and professionals who need to me
                 </svg>
               </div>
               <div>
-                <div className="text-2xl font-bold text-dark-50">{stats.readingTime} min</div>
-                <div className="text-sm text-dark-200">Estimated reading time</div>
+                <div className="text-2xl font-bold text-light-900 dark:text-dark-50">{stats.readingTime} min</div>
+                <div className="text-sm text-light-500 dark:text-dark-200">Estimated reading time</div>
               </div>
             </div>
           </div>
@@ -146,8 +146,8 @@ Word counters are useful for writers, students, and professionals who need to me
                 </svg>
               </div>
               <div>
-                <div className="text-2xl font-bold text-dark-50">{stats.speakingTime} min</div>
-                <div className="text-sm text-dark-200">Estimated speaking time</div>
+                <div className="text-2xl font-bold text-light-900 dark:text-dark-50">{stats.speakingTime} min</div>
+                <div className="text-sm text-light-500 dark:text-dark-200">Estimated speaking time</div>
               </div>
             </div>
           </div>
@@ -157,18 +157,18 @@ Word counters are useful for writers, students, and professionals who need to me
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
             <div className="mb-2 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">Your Text</label>
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">Your Text</label>
               <div className="flex gap-2">
                 <button
                   onClick={loadSample}
-                  className="text-xs text-dark-200 hover:text-dark-50"
+                  className="text-xs text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50"
                 >
                   Load Sample
                 </button>
-                <span className="text-dark-300">|</span>
+                <span className="text-light-600 dark:text-dark-300">|</span>
                 <button
                   onClick={clearText}
-                  className="text-xs text-dark-200 hover:text-dark-50"
+                  className="text-xs text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50"
                 >
                   Clear
                 </button>
@@ -177,7 +177,7 @@ Word counters are useful for writers, students, and professionals who need to me
             <textarea
               value={text}
               onChange={(e) => setText(e.target.value)}
-              className="input-dark h-64 w-full rounded-lg p-4 text-dark-50"
+              className="input-dark h-64 w-full rounded-lg p-4 text-light-900 dark:text-dark-50"
               placeholder="Type or paste your text here..."
             />
           </div>
@@ -186,15 +186,15 @@ Word counters are useful for writers, students, and professionals who need to me
         <AdCard slot="YOUR_AD_SLOT_WORD_2" />
 
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-2 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-2 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             About Word Counter
           </h2>
-          <div className="space-y-2 text-sm text-dark-200">
+          <div className="space-y-2 text-sm text-light-500 dark:text-dark-200">
             <p>
               This word counter provides detailed statistics about your text, including character count with and without spaces, word count, line count, paragraph count, and sentence count.
             </p>
             <p>
-              <strong className="text-dark-100">Reading time</strong> is calculated at an average reading speed of 200 words per minute. <strong className="text-dark-100">Speaking time</strong> is calculated at an average speaking speed of 130 words per minute.
+              <strong className="text-light-700 dark:text-dark-100">Reading time</strong> is calculated at an average reading speed of 200 words per minute. <strong className="text-light-700 dark:text-dark-100">Speaking time</strong> is calculated at an average speaking speed of 130 words per minute.
             </p>
             <p>
               Useful for writers, bloggers, students, and professionals who need to meet specific word count requirements for essays, articles, speeches, and social media posts.

@@ -2,6 +2,8 @@
 
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import GlobalErrorCatcher from '@/components/GlobalErrorCatcher';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -38,9 +40,14 @@ var _hmt = _hmt || [];
       </head>
       <body className="grid-bg min-h-screen">
         <ThemeProvider>
-          {/* 顶部光晕装饰 */}
-          <div className="page-glow" />
-          {children}
+          {/* 全局错误捕获：React 渲染错误 */}
+          <ErrorBoundary>
+            {/* 顶部光晕装饰 */}
+            <div className="page-glow" />
+            {children}
+          </ErrorBoundary>
+          {/* 全局错误捕获：非 React 错误（资源加载、Promise 等）+ 浮动反馈 */}
+          <GlobalErrorCatcher />
         </ThemeProvider>
       </body>
     </html>

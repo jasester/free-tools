@@ -133,10 +133,10 @@ export default function LoremIpsumGenerator() {
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 font-display text-3xl font-bold text-dark-50">
+          <h1 className="mb-2 font-display text-3xl font-bold text-light-900 dark:text-dark-50">
             Lorem Ipsum Generator
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Generate placeholder text for your designs and layouts.
           </p>
         </div>
@@ -146,13 +146,13 @@ export default function LoremIpsumGenerator() {
         {/* 设置区域 */}
         <div className="mt-6 grid animate-fade-in-up gap-4 lg:grid-cols-2">
           <div className="glass-card rounded-xl p-6">
-            <h3 className="mb-4 text-sm font-medium text-dark-100">Configuration</h3>
+            <h3 className="mb-4 text-sm font-medium text-light-700 dark:text-dark-100">Configuration</h3>
 
             {/* 段落数 */}
             <div className="mb-4">
               <div className="mb-2 flex items-center justify-between">
-                <label className="text-sm text-dark-200">Paragraphs</label>
-                <span className="text-sm font-medium text-dark-50">{paragraphs}</span>
+                <label className="text-sm text-light-500 dark:text-dark-200">Paragraphs</label>
+                <span className="text-sm font-medium text-light-900 dark:text-dark-50">{paragraphs}</span>
               </div>
               <input
                 type="range"
@@ -162,7 +162,7 @@ export default function LoremIpsumGenerator() {
                 onChange={(e) => setParagraphs(parseInt(e.target.value))}
                 className="w-full accent-accent-blue"
               />
-              <div className="mt-1 flex justify-between text-xs text-dark-200">
+              <div className="mt-1 flex justify-between text-xs text-light-500 dark:text-dark-200">
                 <span>1</span>
                 <span>20</span>
               </div>
@@ -171,8 +171,8 @@ export default function LoremIpsumGenerator() {
             {/* 每段句子数 */}
             <div className="mb-4">
               <div className="mb-2 flex items-center justify-between">
-                <label className="text-sm text-dark-200">Sentences per Paragraph</label>
-                <span className="text-sm font-medium text-dark-50">{sentencesPerParagraph}</span>
+                <label className="text-sm text-light-500 dark:text-dark-200">Sentences per Paragraph</label>
+                <span className="text-sm font-medium text-light-900 dark:text-dark-50">{sentencesPerParagraph}</span>
               </div>
               <input
                 type="range"
@@ -182,7 +182,7 @@ export default function LoremIpsumGenerator() {
                 onChange={(e) => setSentencesPerParagraph(parseInt(e.target.value))}
                 className="w-full accent-accent-blue"
               />
-              <div className="mt-1 flex justify-between text-xs text-dark-200">
+              <div className="mt-1 flex justify-between text-xs text-light-500 dark:text-dark-200">
                 <span>1</span>
                 <span>20</span>
               </div>
@@ -191,8 +191,8 @@ export default function LoremIpsumGenerator() {
             {/* 每句单词数 */}
             <div className="mb-4">
               <div className="mb-2 flex items-center justify-between">
-                <label className="text-sm text-dark-200">Words per Sentence</label>
-                <span className="text-sm font-medium text-dark-50">{wordsPerSentence}</span>
+                <label className="text-sm text-light-500 dark:text-dark-200">Words per Sentence</label>
+                <span className="text-sm font-medium text-light-900 dark:text-dark-50">{wordsPerSentence}</span>
               </div>
               <input
                 type="range"
@@ -202,7 +202,7 @@ export default function LoremIpsumGenerator() {
                 onChange={(e) => setWordsPerSentence(parseInt(e.target.value))}
                 className="w-full accent-accent-blue"
               />
-              <div className="mt-1 flex justify-between text-xs text-dark-200">
+              <div className="mt-1 flex justify-between text-xs text-light-500 dark:text-dark-200">
                 <span>3</span>
                 <span>20</span>
               </div>
@@ -210,14 +210,14 @@ export default function LoremIpsumGenerator() {
 
             {/* 格式选择 */}
             <div className="mb-4">
-              <label className="mb-2 block text-sm text-dark-200">Output Format</label>
+              <label className="mb-2 block text-sm text-light-500 dark:text-dark-200">Output Format</label>
               <div className="flex gap-2">
                 <button
                   onClick={() => setFormat('plain')}
                   className={`flex-1 rounded-lg px-4 py-2 text-sm font-medium transition ${
                     format === 'plain'
                       ? 'bg-accent-blue text-white'
-                      : 'bg-dark-600 text-dark-200 hover:text-dark-50'
+                      : 'bg-gray-100 dark:bg-dark-600 text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50'
                   }`}
                 >
                   Plain Text
@@ -227,7 +227,7 @@ export default function LoremIpsumGenerator() {
                   className={`flex-1 rounded-lg px-4 py-2 text-sm font-medium transition ${
                     format === 'html'
                       ? 'bg-accent-blue text-white'
-                      : 'bg-dark-600 text-dark-200 hover:text-dark-50'
+                      : 'bg-gray-100 dark:bg-dark-600 text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50'
                   }`}
                 >
                   HTML
@@ -246,35 +246,35 @@ export default function LoremIpsumGenerator() {
 
           {/* 快速预设 */}
           <div className="glass-card rounded-xl p-6">
-            <h3 className="mb-4 text-sm font-medium text-dark-100">Quick Presets</h3>
+            <h3 className="mb-4 text-sm font-medium text-light-700 dark:text-dark-100">Quick Presets</h3>
             <div className="space-y-2">
               <button
                 onClick={() => quickGenerate(1, 3, 6)}
-                className="btn-ghost w-full rounded-lg px-4 py-3 text-left text-sm transition hover:bg-dark-500"
+                className="btn-ghost w-full rounded-lg px-4 py-3 text-left text-sm transition hover:bg-gray-300 dark:hover:bg-dark-500"
               >
-                <span className="font-medium text-dark-50">Short</span>
-                <span className="ml-2 text-dark-200">1 paragraph, 3 sentences</span>
+                <span className="font-medium text-light-900 dark:text-dark-50">Short</span>
+                <span className="ml-2 text-light-500 dark:text-dark-200">1 paragraph, 3 sentences</span>
               </button>
               <button
                 onClick={() => quickGenerate(3, 5, 8)}
-                className="btn-ghost w-full rounded-lg px-4 py-3 text-left text-sm transition hover:bg-dark-500"
+                className="btn-ghost w-full rounded-lg px-4 py-3 text-left text-sm transition hover:bg-gray-300 dark:hover:bg-dark-500"
               >
-                <span className="font-medium text-dark-50">Medium</span>
-                <span className="ml-2 text-dark-200">3 paragraphs, 5 sentences</span>
+                <span className="font-medium text-light-900 dark:text-dark-50">Medium</span>
+                <span className="ml-2 text-light-500 dark:text-dark-200">3 paragraphs, 5 sentences</span>
               </button>
               <button
                 onClick={() => quickGenerate(5, 8, 10)}
-                className="btn-ghost w-full rounded-lg px-4 py-3 text-left text-sm transition hover:bg-dark-500"
+                className="btn-ghost w-full rounded-lg px-4 py-3 text-left text-sm transition hover:bg-gray-300 dark:hover:bg-dark-500"
               >
-                <span className="font-medium text-dark-50">Long</span>
-                <span className="ml-2 text-dark-200">5 paragraphs, 8 sentences</span>
+                <span className="font-medium text-light-900 dark:text-dark-50">Long</span>
+                <span className="ml-2 text-light-500 dark:text-dark-200">5 paragraphs, 8 sentences</span>
               </button>
               <button
                 onClick={() => quickGenerate(10, 10, 12)}
-                className="btn-ghost w-full rounded-lg px-4 py-3 text-left text-sm transition hover:bg-dark-500"
+                className="btn-ghost w-full rounded-lg px-4 py-3 text-left text-sm transition hover:bg-gray-300 dark:hover:bg-dark-500"
               >
-                <span className="font-medium text-dark-50">Very Long</span>
-                <span className="ml-2 text-dark-200">10 paragraphs, 10 sentences</span>
+                <span className="font-medium text-light-900 dark:text-dark-50">Very Long</span>
+                <span className="ml-2 text-light-500 dark:text-dark-200">10 paragraphs, 10 sentences</span>
               </button>
             </div>
           </div>
@@ -285,7 +285,7 @@ export default function LoremIpsumGenerator() {
           <div className="mt-6 animate-fade-in-up">
             <div className="glass-card rounded-xl p-6">
               <div className="mb-2 flex items-center justify-between">
-                <label className="text-sm font-medium text-dark-100">Generated Text</label>
+                <label className="text-sm font-medium text-light-700 dark:text-dark-100">Generated Text</label>
                 <button
                   onClick={copyToClipboard}
                   className="btn-gradient rounded-lg px-4 py-2 text-sm font-medium"
@@ -296,7 +296,7 @@ export default function LoremIpsumGenerator() {
               <textarea
                 readOnly
                 value={output}
-                className="input-dark h-64 w-full rounded-lg bg-dark-600 p-4 font-mono text-sm text-dark-50"
+                className="input-dark h-64 w-full rounded-lg bg-gray-100 dark:bg-dark-600 p-4 font-mono text-sm text-light-900 dark:text-dark-50"
               />
             </div>
           </div>
@@ -305,10 +305,10 @@ export default function LoremIpsumGenerator() {
         <AdCard slot="YOUR_AD_SLOT_LOREM_2" />
 
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-2 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-2 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             About Lorem Ipsum
           </h2>
-          <div className="space-y-2 text-sm text-dark-200">
+          <div className="space-y-2 text-sm text-light-500 dark:text-dark-200">
             <p>
               Lorem Ipsum is a placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
             </p>

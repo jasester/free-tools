@@ -37,10 +37,10 @@ export default function Timestamp() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题区域 */}
         <div className="animate-fade-in-up">
-          <h1 className="font-display mb-2 text-2xl font-bold text-dark-50">
+          <h1 className="font-display mb-2 text-2xl font-bold text-light-900 dark:text-dark-50">
             Timestamp Converter
           </h1>
-          <p className="mb-6 text-sm text-dark-200">
+          <p className="mb-6 text-sm text-light-500 dark:text-dark-200">
             Convert between Unix timestamps and human-readable dates.
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function Timestamp() {
         <div className="mt-6 grid gap-6 lg:grid-cols-2">
           {/* 时间戳转日期 */}
           <div className="glass-card animate-fade-in-up rounded-xl p-6">
-            <h2 className="font-display mb-3 font-semibold text-dark-50">
+            <h2 className="font-display mb-3 font-semibold text-light-900 dark:text-dark-50">
               Timestamp &rarr; Date
             </h2>
             <input
@@ -59,7 +59,7 @@ export default function Timestamp() {
               value={tsInput}
               onChange={(e) => setTsInput(e.target.value)}
               placeholder={`e.g. ${now}`}
-              className="input-dark mb-3 w-full rounded-lg p-3 text-sm text-dark-50 placeholder-dark-200"
+              className="input-dark mb-3 w-full rounded-lg p-3 text-sm text-light-900 dark:text-dark-50 placeholder-dark-200"
             />
             <button
               onClick={convertToDate}
@@ -68,7 +68,7 @@ export default function Timestamp() {
               Convert
             </button>
             {dateOutput && (
-              <div className="mt-3 rounded-lg bg-dark-600/50 p-3 font-mono text-sm text-dark-100">
+              <div className="mt-3 rounded-lg bg-gray-100 dark:bg-dark-600/50 p-3 font-mono text-sm text-light-700 dark:text-dark-100">
                 {dateOutput}
               </div>
             )}
@@ -76,14 +76,14 @@ export default function Timestamp() {
 
           {/* 日期转时间戳 */}
           <div className="glass-card animate-fade-in-up rounded-xl p-6">
-            <h2 className="font-display mb-3 font-semibold text-dark-50">
+            <h2 className="font-display mb-3 font-semibold text-light-900 dark:text-dark-50">
               Date &rarr; Timestamp
             </h2>
             <input
               type="datetime-local"
               value={dateInput}
               onChange={(e) => setDateInput(e.target.value)}
-              className="input-dark mb-3 w-full rounded-lg p-3 text-sm text-dark-50"
+              className="input-dark mb-3 w-full rounded-lg p-3 text-sm text-light-900 dark:text-dark-50"
             />
             <button
               onClick={convertToTimestamp}
@@ -92,7 +92,7 @@ export default function Timestamp() {
               Convert
             </button>
             {tsOutput && (
-              <div className="mt-3 rounded-lg bg-dark-600/50 p-3 font-mono text-sm text-dark-100">
+              <div className="mt-3 rounded-lg bg-gray-100 dark:bg-dark-600/50 p-3 font-mono text-sm text-light-700 dark:text-dark-100">
                 {tsOutput}
               </div>
             )}
@@ -102,9 +102,9 @@ export default function Timestamp() {
         {/* 当前时间戳展示 */}
         <div className="mt-4 animate-fade-in-up">
           <div className="glass-card rounded-xl p-4 text-center">
-            <p className="text-sm text-dark-200">
+            <p className="text-sm text-light-500 dark:text-dark-200">
               Current Unix Timestamp:{' '}
-              <span className="font-mono font-bold text-dark-50">{now}</span>
+              <span className="font-mono font-bold text-light-900 dark:text-dark-50">{now}</span>
             </p>
           </div>
         </div>
@@ -114,10 +114,10 @@ export default function Timestamp() {
         {/* 关于说明区域 */}
         <section className="mt-10 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <h2 className="font-display mb-2 text-lg font-semibold text-dark-50">
+            <h2 className="font-display mb-2 text-lg font-semibold text-light-900 dark:text-dark-50">
               About Timestamp Converter
             </h2>
-            <p className="text-sm leading-relaxed text-dark-200">
+            <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">
               A Unix timestamp is the number of seconds since January 1, 1970 (UTC).
               This tool helps you convert between timestamps and human-readable dates
               instantly, useful for developers working with APIs and databases.

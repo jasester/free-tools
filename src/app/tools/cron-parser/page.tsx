@@ -240,10 +240,10 @@ export default function CronParser() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         {/* 页面标题 */}
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 font-display text-3xl font-bold text-dark-50">
+          <h1 className="mb-2 font-display text-3xl font-bold text-light-900 dark:text-dark-50">
             Cron Expression Parser
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Parse and generate Cron expressions. Understand when your scheduled tasks will run.
           </p>
         </div>
@@ -253,7 +253,7 @@ export default function CronParser() {
         {/* 输入区域 */}
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <label className="mb-2 block text-sm font-medium text-dark-100">
+            <label className="mb-2 block text-sm font-medium text-light-700 dark:text-dark-100">
               Cron Expression (5 fields: minute hour day month weekday)
             </label>
             <div className="flex gap-3">
@@ -261,7 +261,7 @@ export default function CronParser() {
                 type="text"
                 value={expression}
                 onChange={(e) => setExpression(e.target.value)}
-                className="input-dark flex-1 rounded-lg px-4 py-3 font-mono text-lg text-dark-50"
+                className="input-dark flex-1 rounded-lg px-4 py-3 font-mono text-lg text-light-900 dark:text-dark-50"
                 placeholder="0 0 * * *"
               />
               <button
@@ -298,7 +298,7 @@ export default function CronParser() {
         {/* 字段说明 */}
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <h3 className="mb-4 font-display text-lg font-semibold text-dark-50">
+            <h3 className="mb-4 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
               Field Reference
             </h3>
             <div className="grid gap-4 md:grid-cols-5">
@@ -310,9 +310,9 @@ export default function CronParser() {
                 { field: 'Weekday', range: '0-6', example: '0, 1-5, *' },
               ].map((item) => (
                 <div key={item.field} className="text-center">
-                  <div className="mb-1 font-medium text-dark-50">{item.field}</div>
-                  <div className="text-xs text-dark-200">Range: {item.range}</div>
-                  <div className="text-xs text-dark-300">Ex: {item.example}</div>
+                  <div className="mb-1 font-medium text-light-900 dark:text-dark-50">{item.field}</div>
+                  <div className="text-xs text-light-500 dark:text-dark-200">Range: {item.range}</div>
+                  <div className="text-xs text-light-600 dark:text-dark-300">Ex: {item.example}</div>
                 </div>
               ))}
             </div>
@@ -322,7 +322,7 @@ export default function CronParser() {
         {/* 预设表达式 */}
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-6">
-            <h3 className="mb-4 font-display text-lg font-semibold text-dark-50">
+            <h3 className="mb-4 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
               Common Presets
             </h3>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -330,13 +330,13 @@ export default function CronParser() {
                 <button
                   key={preset.expression}
                   onClick={() => applyPreset(preset)}
-                  className="flex items-center justify-between rounded-lg border border-white/5 bg-dark-600/50 px-4 py-3 text-left transition hover:border-white/10 hover:bg-dark-500/50"
+                  className="flex items-center justify-between rounded-lg border border-gray-200 dark:border-white/5 bg-gray-100 dark:bg-dark-600/50 px-4 py-3 text-left transition hover:border-gray-200 dark:border-white/10 hover:bg-gray-300/50 dark:hover:bg-dark-500/50"
                 >
                   <div>
-                    <div className="font-medium text-dark-50">{preset.name}</div>
-                    <div className="font-mono text-xs text-dark-300">{preset.expression}</div>
+                    <div className="font-medium text-light-900 dark:text-dark-50">{preset.name}</div>
+                    <div className="font-mono text-xs text-light-600 dark:text-dark-300">{preset.expression}</div>
                   </div>
-                  <div className="text-xs text-dark-200">{preset.description}</div>
+                  <div className="text-xs text-light-500 dark:text-dark-200">{preset.description}</div>
                 </button>
               ))}
             </div>
@@ -347,30 +347,30 @@ export default function CronParser() {
 
         {/* 使用说明 */}
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-4 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-4 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             Cron Expression Guide
           </h2>
-          <div className="grid gap-4 text-sm text-dark-200 md:grid-cols-2">
+          <div className="grid gap-4 text-sm text-light-500 dark:text-dark-200 md:grid-cols-2">
             <div>
               <p className="mb-2">
-                <strong className="text-dark-100">* (Asterisk):</strong> 匹配任意值
+                <strong className="text-light-700 dark:text-dark-100">* (Asterisk):</strong> 匹配任意值
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">, (Comma):</strong> 列出多个值，如 1,3,5
+                <strong className="text-light-700 dark:text-dark-100">, (Comma):</strong> 列出多个值，如 1,3,5
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">- (Hyphen):</strong> 范围，如 1-5
+                <strong className="text-light-700 dark:text-dark-100">- (Hyphen):</strong> 范围，如 1-5
               </p>
             </div>
             <div>
               <p className="mb-2">
-                <strong className="text-dark-100">/ (Slash):</strong> 步长，如 */5 表示每5个单位
+                <strong className="text-light-700 dark:text-dark-100">/ (Slash):</strong> 步长，如 */5 表示每5个单位
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">Weekday:</strong> 0=周日, 1=周一, ..., 6=周六
+                <strong className="text-light-700 dark:text-dark-100">Weekday:</strong> 0=周日, 1=周一, ..., 6=周六
               </p>
               <p className="mb-2">
-                <strong className="text-dark-100">Month:</strong> 1=一月, ..., 12=十二月
+                <strong className="text-light-700 dark:text-dark-100">Month:</strong> 1=一月, ..., 12=十二月
               </p>
             </div>
           </div>

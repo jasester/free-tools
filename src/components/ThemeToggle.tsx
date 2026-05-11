@@ -5,6 +5,7 @@ import { useTheme } from './ThemeProvider';
 /**
  * 主题切换按钮组件
  * 在深色和浅色模式之间切换
+ * 支持深色/浅色模式下的图标颜色适配
  */
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
@@ -12,7 +13,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="flex h-9 w-9 items-center justify-center rounded-lg text-dark-100 transition-all hover:bg-white/[0.06] hover:text-dark-50"
+      className="flex h-9 w-9 items-center justify-center rounded-lg text-light-700 dark:text-dark-100 transition-all hover:bg-black/[0.04] dark:hover:bg-white/[0.06] hover:text-light-900 dark:hover:text-dark-50"
       aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
       title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
     >

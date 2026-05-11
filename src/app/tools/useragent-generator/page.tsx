@@ -111,8 +111,8 @@ export default function UserAgentGenerator() {
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 text-3xl font-bold font-display text-dark-50">UserAgent Generator</h1>
-          <p className="mb-6 text-dark-200">Generate random UserAgent strings for testing and development.</p>
+          <h1 className="mb-2 text-3xl font-bold font-display text-light-900 dark:text-dark-50">UserAgent Generator</h1>
+          <p className="mb-6 text-light-500 dark:text-dark-200">Generate random UserAgent strings for testing and development.</p>
         </div>
 
         <AdCard slot="YOUR_AD_SLOT_UA_1" format="horizontal" />
@@ -121,14 +121,14 @@ export default function UserAgentGenerator() {
         <div className="mt-6 grid gap-4 lg:grid-cols-2 animate-fade-in-up">
           {/* 浏览器选择 */}
           <div className="glass-card rounded-xl p-4">
-            <label className="mb-3 block text-sm font-medium text-dark-100">Browser Type</label>
+            <label className="mb-3 block text-sm font-medium text-light-700 dark:text-dark-100">Browser Type</label>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               {(['random', ...Object.keys(userAgents)] as Array<BrowserType | 'random'>).map((type) => (
                 <button
                   key={type}
                   onClick={() => setSelectedBrowser(type)}
                   className={`rounded-lg px-3 py-2 text-xs font-medium transition-all ${
-                    selectedBrowser === type ? 'btn-gradient text-white' : 'btn-ghost text-dark-100'
+                    selectedBrowser === type ? 'btn-gradient text-white' : 'btn-ghost text-light-700 dark:text-dark-100'
                   }`}
                 >
                   {type === 'random' ? '🎲 Random' : type}
@@ -139,15 +139,15 @@ export default function UserAgentGenerator() {
 
           {/* 生成数量 */}
           <div className="glass-card rounded-xl p-4">
-            <label className="mb-3 block text-sm font-medium text-dark-100">
-              Generate Count: <span className="text-dark-50">{count}</span>
+            <label className="mb-3 block text-sm font-medium text-light-700 dark:text-dark-100">
+              Generate Count: <span className="text-light-900 dark:text-dark-50">{count}</span>
             </label>
             <input
               type="range" min="1" max="20" value={count}
               onChange={(e) => setCount(parseInt(e.target.value))}
               className="w-full accent-accent-blue"
             />
-            <div className="mt-2 flex justify-between text-xs text-dark-200">
+            <div className="mt-2 flex justify-between text-xs text-light-500 dark:text-dark-200">
               <span>1</span><span>20</span>
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function UserAgentGenerator() {
           <div className="mt-6 animate-fade-in-up">
             <div className="glass-card rounded-xl p-4">
               <div className="mb-2 flex items-center justify-between">
-                <label className="text-sm font-medium text-dark-100">Generated UserAgent</label>
+                <label className="text-sm font-medium text-light-700 dark:text-dark-100">Generated UserAgent</label>
                 <div className="flex items-center gap-2">
                   {generatedUA.split('\n').length === 1 && (() => {
                     const info = parseUA(generatedUA);
@@ -183,7 +183,7 @@ export default function UserAgentGenerator() {
               <textarea
                 value={generatedUA}
                 readOnly
-                className="input-dark h-32 w-full resize-none rounded-lg bg-dark-600/50 p-3 font-mono text-xs text-dark-50"
+                className="input-dark h-32 w-full resize-none rounded-lg bg-gray-100 dark:bg-dark-600/50 p-3 font-mono text-xs text-light-900 dark:text-dark-50"
               />
             </div>
           </div>
@@ -192,11 +192,11 @@ export default function UserAgentGenerator() {
         {/* 历史记录 */}
         {history.length > 1 && (
           <div className="mt-6 animate-fade-in-up">
-            <h2 className="mb-3 text-sm font-medium text-dark-100">Recent History</h2>
+            <h2 className="mb-3 text-sm font-medium text-light-700 dark:text-dark-100">Recent History</h2>
             <div className="space-y-2">
               {history.slice(1, 6).map((item, i) => (
                 <div key={i} className="glass-card rounded-lg p-3">
-                  <code className="text-xs text-dark-100 break-all">{item.split('\n')[0]}</code>
+                  <code className="text-xs text-light-700 dark:text-dark-100 break-all">{item.split('\n')[0]}</code>
                 </div>
               ))}
             </div>
@@ -206,8 +206,8 @@ export default function UserAgentGenerator() {
         <AdCard slot="YOUR_AD_SLOT_UA_2" />
 
         <section className="glass-card mt-10 rounded-xl p-6 animate-fade-in-up">
-          <h2 className="mb-2 text-lg font-semibold font-display text-dark-50">About UserAgent Generator</h2>
-          <p className="text-sm leading-relaxed text-dark-200">Generate random UserAgent strings for web scraping testing, browser simulation, and development. All data is generated locally in your browser.</p>
+          <h2 className="mb-2 text-lg font-semibold font-display text-light-900 dark:text-dark-50">About UserAgent Generator</h2>
+          <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">Generate random UserAgent strings for web scraping testing, browser simulation, and development. All data is generated locally in your browser.</p>
         </section>
       </main>
       <Footer />

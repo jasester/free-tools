@@ -36,10 +36,10 @@ export default function BMICalculator() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
-        <h1 className="mb-2 animate-fade-in-up font-display text-2xl font-bold text-dark-50">
+        <h1 className="mb-2 animate-fade-in-up font-display text-2xl font-bold text-light-900 dark:text-dark-50">
           BMI Calculator
         </h1>
-        <p className="mb-6 animate-fade-in-up text-dark-200">
+        <p className="mb-6 animate-fade-in-up text-light-500 dark:text-dark-200">
           Calculate your Body Mass Index (BMI) online for free.
         </p>
 
@@ -48,7 +48,7 @@ export default function BMICalculator() {
         <div className="mt-6 max-w-md animate-fade-in-up">
           <div className="glass-card rounded-lg p-6">
             <div className="mb-4">
-              <label className="mb-1 block text-sm font-medium text-dark-100">
+              <label className="mb-1 block text-sm font-medium text-light-700 dark:text-dark-100">
                 Height (cm)
               </label>
               <input
@@ -60,7 +60,7 @@ export default function BMICalculator() {
               />
             </div>
             <div className="mb-4">
-              <label className="mb-1 block text-sm font-medium text-dark-100">
+              <label className="mb-1 block text-sm font-medium text-light-700 dark:text-dark-100">
                 Weight (kg)
               </label>
               <input
@@ -90,10 +90,10 @@ export default function BMICalculator() {
         <AdCard slot="YOUR_AD_SLOT_12" />
 
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-2 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-2 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             BMI Categories
           </h2>
-          <div className="mt-3 space-y-2 text-sm text-dark-100">
+          <div className="mt-3 space-y-2 text-sm text-light-700 dark:text-dark-100">
             <div className="flex justify-between rounded bg-blue-500/10 px-3 py-2">
               <span>Underweight</span><span>&lt; 18.5</span>
             </div>

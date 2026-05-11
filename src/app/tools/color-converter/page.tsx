@@ -111,8 +111,8 @@ export default function ColorConverter() {
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 text-3xl font-bold font-display text-dark-50">Color Converter</h1>
-          <p className="mb-6 text-dark-200">Convert between HEX, RGB and HSL color formats instantly.</p>
+          <h1 className="mb-2 text-3xl font-bold font-display text-light-900 dark:text-dark-50">Color Converter</h1>
+          <p className="mb-6 text-light-500 dark:text-dark-200">Convert between HEX, RGB and HSL color formats instantly.</p>
         </div>
 
         <AdCard slot="YOUR_AD_SLOT_COLOR_1" format="horizontal" />
@@ -123,18 +123,18 @@ export default function ColorConverter() {
 
         <div className="mt-6 grid gap-4 lg:grid-cols-3 animate-fade-in-up">
           <div className="glass-card rounded-xl p-4">
-            <label className="mb-2 block text-sm font-medium text-dark-100">HEX</label>
-            <input type="text" value={hex} onChange={(e) => handleColorChange(e.target.value, 'hex')} className="input-dark w-full rounded-lg p-3 font-mono text-sm text-dark-50" placeholder="#000000" />
+            <label className="mb-2 block text-sm font-medium text-light-700 dark:text-dark-100">HEX</label>
+            <input type="text" value={hex} onChange={(e) => handleColorChange(e.target.value, 'hex')} className="input-dark w-full rounded-lg p-3 font-mono text-sm text-light-900 dark:text-dark-50" placeholder="#000000" />
             <button onClick={() => copyToClipboard(hex)} className="btn-ghost mt-2 w-full rounded-lg px-4 py-2 text-sm">Copy</button>
           </div>
           <div className="glass-card rounded-xl p-4">
-            <label className="mb-2 block text-sm font-medium text-dark-100">RGB</label>
-            <input type="text" value={rgb} onChange={(e) => handleColorChange(e.target.value, 'rgb')} className="input-dark w-full rounded-lg p-3 font-mono text-sm text-dark-50" placeholder="rgb(0, 0, 0)" />
+            <label className="mb-2 block text-sm font-medium text-light-700 dark:text-dark-100">RGB</label>
+            <input type="text" value={rgb} onChange={(e) => handleColorChange(e.target.value, 'rgb')} className="input-dark w-full rounded-lg p-3 font-mono text-sm text-light-900 dark:text-dark-50" placeholder="rgb(0, 0, 0)" />
             <button onClick={() => copyToClipboard(rgb)} className="btn-ghost mt-2 w-full rounded-lg px-4 py-2 text-sm">Copy</button>
           </div>
           <div className="glass-card rounded-xl p-4">
-            <label className="mb-2 block text-sm font-medium text-dark-100">HSL</label>
-            <input type="text" value={hsl} onChange={(e) => handleColorChange(e.target.value, 'hsl')} className="input-dark w-full rounded-lg p-3 font-mono text-sm text-dark-50" placeholder="hsl(0, 0%, 0%)" />
+            <label className="mb-2 block text-sm font-medium text-light-700 dark:text-dark-100">HSL</label>
+            <input type="text" value={hsl} onChange={(e) => handleColorChange(e.target.value, 'hsl')} className="input-dark w-full rounded-lg p-3 font-mono text-sm text-light-900 dark:text-dark-50" placeholder="hsl(0, 0%, 0%)" />
             <button onClick={() => copyToClipboard(hsl)} className="btn-ghost mt-2 w-full rounded-lg px-4 py-2 text-sm">Copy</button>
           </div>
         </div>
@@ -142,8 +142,8 @@ export default function ColorConverter() {
         <AdCard slot="YOUR_AD_SLOT_COLOR_2" />
 
         <section className="glass-card mt-10 rounded-xl p-6 animate-fade-in-up">
-          <h2 className="mb-2 text-lg font-semibold font-display text-dark-50">About Color Converter</h2>
-          <p className="text-sm leading-relaxed text-dark-200">Convert between HEX, RGB, and HSL color formats instantly in your browser. Perfect for web developers and designers.</p>
+          <h2 className="mb-2 text-lg font-semibold font-display text-light-900 dark:text-dark-50">About Color Converter</h2>
+          <p className="text-sm leading-relaxed text-light-500 dark:text-dark-200">Convert between HEX, RGB, and HSL color formats instantly in your browser. Perfect for web developers and designers.</p>
         </section>
       </main>
       <Footer />

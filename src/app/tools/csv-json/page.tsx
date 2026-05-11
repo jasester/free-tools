@@ -200,10 +200,10 @@ export default function CsvJsonConverter() {
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 font-display text-3xl font-bold text-dark-50">
+          <h1 className="mb-2 font-display text-3xl font-bold text-light-900 dark:text-dark-50">
             CSV / JSON Converter
           </h1>
-          <p className="mb-6 text-dark-200">
+          <p className="mb-6 text-light-500 dark:text-dark-200">
             Convert between CSV and JSON formats with customizable header options.
           </p>
         </div>
@@ -214,13 +214,13 @@ export default function CsvJsonConverter() {
         <div className="mt-6 animate-fade-in-up">
           <div className="glass-card rounded-xl p-4">
             <div className="flex flex-wrap items-center gap-4">
-              <div className="flex rounded-lg bg-dark-600 p-1">
+              <div className="flex rounded-lg bg-gray-100 dark:bg-dark-600 p-1">
                 <button
                   onClick={() => setMode('csv-to-json')}
                   className={`rounded-md px-4 py-2 text-sm font-medium transition ${
                     mode === 'csv-to-json'
                       ? 'bg-accent-blue text-white'
-                      : 'text-dark-200 hover:text-dark-50'
+                      : 'text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50'
                   }`}
                 >
                   CSV to JSON
@@ -230,7 +230,7 @@ export default function CsvJsonConverter() {
                   className={`rounded-md px-4 py-2 text-sm font-medium transition ${
                     mode === 'json-to-csv'
                       ? 'bg-accent-blue text-white'
-                      : 'text-dark-200 hover:text-dark-50'
+                      : 'text-light-500 dark:text-dark-200 hover:text-light-900 dark:hover:text-dark-50'
                   }`}
                 >
                   JSON to CSV
@@ -241,9 +241,9 @@ export default function CsvJsonConverter() {
                   type="checkbox"
                   checked={hasHeader}
                   onChange={(e) => setHasHeader(e.target.checked)}
-                  className="h-4 w-4 rounded border-dark-300 bg-dark-600 text-accent-blue"
+                  className="h-4 w-4 rounded border-gray-300 dark:border-dark-300 bg-gray-100 dark:bg-dark-600 text-accent-blue"
                 />
-                <span className="text-sm text-dark-200">Include Header Row</span>
+                <span className="text-sm text-light-500 dark:text-dark-200">Include Header Row</span>
               </label>
             </div>
           </div>
@@ -253,7 +253,7 @@ export default function CsvJsonConverter() {
         <div className="mt-6 grid animate-fade-in-up gap-4 lg:grid-cols-2">
           <div>
             <div className="mb-1 flex items-center justify-between">
-              <label className="text-sm font-medium text-dark-100">
+              <label className="text-sm font-medium text-light-700 dark:text-dark-100">
                 {mode === 'csv-to-json' ? 'CSV Input' : 'JSON Input'}
               </label>
               <button
@@ -266,7 +266,7 @@ export default function CsvJsonConverter() {
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="input-dark h-72 w-full rounded-lg p-4 font-mono text-sm text-dark-50"
+              className="input-dark h-72 w-full rounded-lg p-4 font-mono text-sm text-light-900 dark:text-dark-50"
               placeholder={
                 mode === 'csv-to-json'
                   ? 'name,age,city\nJohn,30,New York\nJane,25,London'
@@ -275,7 +275,7 @@ export default function CsvJsonConverter() {
             />
           </div>
           <div>
-            <label className="mb-1 block text-sm font-medium text-dark-100">
+            <label className="mb-1 block text-sm font-medium text-light-700 dark:text-dark-100">
               {mode === 'csv-to-json' ? 'JSON Output' : 'CSV Output'}
             </label>
             {error ? (
@@ -286,7 +286,7 @@ export default function CsvJsonConverter() {
               <textarea
                 readOnly
                 value={output}
-                className="input-dark h-72 w-full rounded-lg bg-dark-600 p-4 font-mono text-sm text-dark-50"
+                className="input-dark h-72 w-full rounded-lg bg-gray-100 dark:bg-dark-600 p-4 font-mono text-sm text-light-900 dark:text-dark-50"
                 placeholder="Result will appear here..."
               />
             )}
@@ -318,15 +318,15 @@ export default function CsvJsonConverter() {
         <AdCard slot="YOUR_AD_SLOT_CSV_2" />
 
         <section className="glass-card mt-10 animate-fade-in-up rounded-xl p-6">
-          <h2 className="mb-2 font-display text-lg font-semibold text-dark-50">
+          <h2 className="mb-2 font-display text-lg font-semibold text-light-900 dark:text-dark-50">
             About CSV / JSON Converter
           </h2>
-          <div className="space-y-2 text-sm text-dark-200">
+          <div className="space-y-2 text-sm text-light-500 dark:text-dark-200">
             <p>
-              <strong className="text-dark-100">CSV (Comma-Separated Values):</strong> A simple text format for tabular data where each line represents a row and values are separated by commas.
+              <strong className="text-light-700 dark:text-dark-100">CSV (Comma-Separated Values):</strong> A simple text format for tabular data where each line represents a row and values are separated by commas.
             </p>
             <p>
-              <strong className="text-dark-100">JSON (JavaScript Object Notation):</strong> A lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate.
+              <strong className="text-light-700 dark:text-dark-100">JSON (JavaScript Object Notation):</strong> A lightweight data-interchange format that is easy for humans to read and write, and easy for machines to parse and generate.
             </p>
             <p>
               This tool supports quoted fields, escaped quotes, and custom header handling. All processing happens in your browser.

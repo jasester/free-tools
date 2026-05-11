@@ -83,8 +83,8 @@ export default function PasswordGenerator() {
       <Header />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8">
         <div className="animate-fade-in-up">
-          <h1 className="mb-2 text-3xl font-bold font-display text-dark-50">Password Generator</h1>
-          <p className="mb-6 text-dark-200">Generate strong, secure passwords instantly.</p>
+          <h1 className="mb-2 text-3xl font-bold font-display text-light-900 dark:text-dark-50">Password Generator</h1>
+          <p className="mb-6 text-light-500 dark:text-dark-200">Generate strong, secure passwords instantly.</p>
         </div>
 
         <AdCard slot="YOUR_AD_SLOT_PWD_1" format="horizontal" />
@@ -97,7 +97,7 @@ export default function PasswordGenerator() {
                 type="text"
                 value={password}
                 readOnly
-                className="input-dark flex-1 rounded-lg p-4 font-mono text-xl tracking-wider text-dark-50"
+                className="input-dark flex-1 rounded-lg p-4 font-mono text-xl tracking-wider text-light-900 dark:text-dark-50"
               />
               <button
                 onClick={copyToClipboard}
@@ -110,12 +110,12 @@ export default function PasswordGenerator() {
             {/* 密码强度条 */}
             <div className="mt-4">
               <div className="mb-2 flex items-center justify-between">
-                <span className="text-xs text-dark-200">Strength</span>
+                <span className="text-xs text-light-500 dark:text-dark-200">Strength</span>
                 <span className={`text-xs font-medium ${strengthColors[strength].replace('bg-', 'text-')}`}>
                   {strengthLabels[strength]}
                 </span>
               </div>
-              <div className="h-2 rounded-full bg-dark-600/50">
+              <div className="h-2 rounded-full bg-gray-100 dark:bg-dark-600/50">
                 <div
                   className={`h-full rounded-full transition-all ${strengthColors[strength]}`}
                   style={{ width: `${((strength + 1) / 6) * 100}%` }}
@@ -129,8 +129,8 @@ export default function PasswordGenerator() {
         <div className="mt-6 grid gap-4 lg:grid-cols-2 animate-fade-in-up">
           {/* 长度设置 */}
           <div className="glass-card rounded-xl p-4">
-            <label className="mb-3 block text-sm font-medium text-dark-100">
-              Password Length: <span className="text-dark-50">{length}</span>
+            <label className="mb-3 block text-sm font-medium text-light-700 dark:text-dark-100">
+              Password Length: <span className="text-light-900 dark:text-dark-50">{length}</span>
             </label>
             <input
               type="range"
@@ -140,7 +140,7 @@ export default function PasswordGenerator() {
               onChange={(e) => setLength(parseInt(e.target.value))}
               className="w-full accent-accent-blue"
             />
-            <div className="mt-2 flex justify-between text-xs text-dark-200">
+            <div className="mt-2 flex justify-between text-xs text-light-500 dark:text-dark-200">
               <span>6</span>
               <span>64</span>
             </div>
@@ -148,7 +148,7 @@ export default function PasswordGenerator() {
 
           {/* 字符选项 */}
           <div className="glass-card rounded-xl p-4">
-            <label className="mb-3 block text-sm font-medium text-dark-100">Character Types</label>
+            <label className="mb-3 block text-sm font-medium text-light-700 dark:text-dark-100">Character Types</label>
             <div className="space-y-2">
               {[
                 { key: 'uppercase', label: 'Uppercase (A-Z)' },
@@ -161,9 +161,9 @@ export default function PasswordGenerator() {
                     type="checkbox"
                     checked={options[key as keyof typeof options]}
                     onChange={() => toggleOption(key as keyof typeof options)}
-                    className="h-4 w-4 rounded border-dark-300 bg-dark-600 text-accent-blue focus:ring-accent-blue"
+                    className="h-4 w-4 rounded border-gray-300 dark:border-dark-300 bg-gray-100 dark:bg-dark-600 text-accent-blue focus:ring-accent-blue"
                   />
-                  <span className="text-sm text-dark-200">{label}</span>
+                  <span className="text-sm text-light-500 dark:text-dark-200">{label}</span>
                 </label>
               ))}
             </div>
@@ -183,8 +183,8 @@ export default function PasswordGenerator() {
         <AdCard slot="YOUR_AD_SLOT_PWD_2" />
 
         <section className="glass-card mt-10 rounded-xl p-6 animate-fade-in-up">
-          <h2 className="mb-2 text-lg font-semibold font-display text-dark-50">Password Tips</h2>
-          <ul className="list-inside list-disc space-y-1 text-sm text-dark-200">
+          <h2 className="mb-2 text-lg font-semibold font-display text-light-900 dark:text-dark-50">Password Tips</h2>
+          <ul className="list-inside list-disc space-y-1 text-sm text-light-500 dark:text-dark-200">
             <li>Use at least 12 characters for better security</li>
             <li>Include a mix of uppercase, lowercase, numbers, and symbols</li>
             <li>Avoid using personal information in passwords</li>
